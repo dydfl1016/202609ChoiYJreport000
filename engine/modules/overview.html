@@ -1,0 +1,17 @@
+<section class="report-section" aria-labelledby="glance-heading">
+      <span class="section-eyebrow">{{content.section_eyebrow_1}}</span>
+      <h2 id="glance-heading" class="section-title">{{content.section_title_1}}</h2>
+      <p class="section-desc">{{content.section_desc_1}}</p>
+
+      <div class="snapshot-grid">
+        {{#each module.metrics}}<div class="snapshot-cell reveal-item {{item.stateClass}}">
+          <div class="snapshot-metric">{{item.snapshot_metric}}</div>
+          <div>
+            <div class="snapshot-label">{{item.snapshot_label}}</div>
+            <div class="snapshot-sub">{{item.snapshot_sub}}</div>
+          </div>
+        </div>{{/each}}
+      </div>
+    </section>
+
+    

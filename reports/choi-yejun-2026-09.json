@@ -1,0 +1,392 @@
+{
+  "reportId": "choi-yejun-2026-09",
+  "studentId": "choi-yejun",
+  "month": "2026-09",
+  "contentSchemaVersion": 1,
+  "reportRevision": 1,
+  "inputStatus": "reviewed-monthly-narrative",
+  "student": {
+    "displayName": "최예준",
+    "grade": "초등학교 5학년",
+    "defaultArchiveUrl": "https://drive.google.com/drive/folders/1uIBXIILS6hPg6kJnmA1fTUiHPrVn42Np"
+  },
+  "archiveReference": {},
+  "classRecord": {
+    "scheduled": 16,
+    "actual": 17,
+    "additional": 1
+  },
+  "evidence": [],
+  "modules": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "contentRef": "heroStory"
+    },
+    {
+      "id": "overview",
+      "type": "overview",
+      "content": {
+        "section_eyebrow_1": "Overview",
+        "section_title_1": "9월 학습 한눈에 보기",
+        "section_desc_1": "9월 한 달간 실행된 실제 수업 기록과 활동 데이터 요약입니다."
+      },
+      "metrics": [
+        {
+          "snapshot_metric": "{{classRecord.actual}}",
+          "snapshot_label": "수업 진행",
+          "snapshot_sub": "예정 16회 + 보충 1회",
+          "state": "default",
+          "highlight": false,
+          "stateClass": ""
+        },
+        {
+          "snapshot_metric": "3",
+          "snapshot_label": "핵심 영역",
+          "snapshot_sub": "Reading · Building · Grammar",
+          "state": "default",
+          "highlight": false,
+          "stateClass": ""
+        },
+        {
+          "snapshot_metric": "10",
+          "snapshot_label": "대표 문장 구성",
+          "snapshot_sub": "Unscramble 배열 훈련",
+          "state": "default",
+          "highlight": false,
+          "stateClass": ""
+        },
+        {
+          "snapshot_metric": "OCT",
+          "snapshot_label": "Speaking Output",
+          "snapshot_sub": "10월 연계 발화 확장",
+          "state": "default",
+          "highlight": true,
+          "stateClass": "highlight-cell"
+        }
+      ]
+    },
+    {
+      "id": "learning-continuum",
+      "type": "learning-continuum",
+      "content": {
+        "section_eyebrow_1": "Learning Continuum",
+        "section_title_1": "예준이의 영어가 연결되는 과정",
+        "section_desc_1": "\n        성취 점수가 아닌, 지식이 문장으로 조직화되어 발화로 이어지는 5단계 로드맵 상의 현재 위치입니다.\n      "
+      },
+      "steps": [
+        {
+          "step_idx": "01",
+          "step_term": "WORD",
+          "step_desc": "단어를 확인하고",
+          "step_status_tag": "Foundation",
+          "state": "default",
+          "stateClass": ""
+        },
+        {
+          "step_idx": "02",
+          "step_term": "MEANING",
+          "step_desc": "뜻을 연결하고",
+          "step_status_tag": "9월 집중",
+          "state": "active",
+          "stateClass": "active-phase"
+        },
+        {
+          "step_idx": "03",
+          "step_term": "STRUCTURE",
+          "step_desc": "문장 속 위치와 관계를 보고",
+          "step_status_tag": "9월 집중",
+          "state": "active",
+          "stateClass": "active-phase"
+        },
+        {
+          "step_idx": "04",
+          "step_term": "SENTENCE",
+          "step_desc": "하나의 문장으로 이해하기",
+          "step_status_tag": "9월 집중",
+          "state": "active",
+          "stateClass": "active-phase"
+        },
+        {
+          "step_idx": "05",
+          "step_term": "SPEAKING",
+          "step_desc": "이해한 영어를 입으로 꺼내기",
+          "step_status_tag": "10월 예정",
+          "state": "next",
+          "stateClass": "next-phase"
+        }
+      ]
+    },
+    {
+      "id": "reading-vocabulary",
+      "type": "reading-vocabulary",
+      "content": {
+        "section_eyebrow_1": "Evidence 01 · Reading & Vocabulary",
+        "section_title_1": "단어의 뜻을 넘어",
+        "br_after_1": "문장의 의미로",
+        "section_desc_1": "\n          Bricks Reading Translation 활동을 통해 영어 문장을 읽고 우리말 의미로 옮기는 연습을 지속했습니다. 단어를 독립된 암기 항목으로만 다루지 않고 맥락 속 의미로 전환하는 훈련을 진행했습니다.\n        ",
+        "span_1": "WORD",
+        "stream_arrow_1": "→",
+        "span_2": "CONTEXT",
+        "stream_arrow_2": "→",
+        "span_3": "MEANING",
+        "growing_next_eyebrow_1": "Observed Pattern · Growing Next",
+        "growing_next_text_1": "\n            일부 기초 어휘는 이미 학습한 단어임에도 문장 안에서 즉시 의미가 떠오르지 않는 경우가 있었습니다. (대표 사례: ",
+        "word_token_1": "dear",
+        "word_token_after_1": ", ",
+        "word_token_2": "rabbit",
+        "word_token_after_2": ")\n            ",
+        "br_after_2": "\n            앞으로는 새로운 어휘 확장과 함께 기존 어휘의 반복 노출과 즉각적인 인출 속도를 높이는 연습을 병행합니다.\n          ",
+        "label_30": "수업 확인 어휘 목록"
+      },
+      "vocabulary": [
+        "fin",
+        "scale",
+        "perfect",
+        "crescent moon",
+        "vase",
+        "almost",
+        "same",
+        "rectangle",
+        "left / right",
+        "bright",
+        "around",
+        "balloon",
+        "different",
+        "country"
+      ]
+    },
+    {
+      "id": "sentence-building",
+      "type": "sentence-building",
+      "content": {
+        "section_eyebrow_1": "Evidence 02 · Sentence Building",
+        "section_title_1": "흩어진 단어에서",
+        "br_after_1": "문장의 질서를 찾다",
+        "section_desc_1": "\n          Unscramble 활동을 통해 흩어진 단어를 배열하며 문장의 성분이 어떤 순서로 결합하는지 파악했습니다. 이번 달에는 대표적으로 2가지 핵심 문장 패턴을 중점 구성했습니다.\n        ",
+        "building_summary_count_1": "10",
+        "span_1": " 대표 문장 구성 훈련",
+        "structure_chain_1": "SUBJECT → ACTION → PLACE"
+      },
+      "patterns": [
+        {
+          "label": "PATTERN 01 · MOVEMENT",
+          "activityCountLabel": "4 sentences",
+          "formula": "Subject + be going to + Place",
+          "examples": [
+            "• He’s going to the bakery.",
+            "• She’s going to the library."
+          ],
+          "stateClass": ""
+        },
+        {
+          "label": "PATTERN 02 · ACTION",
+          "activityCountLabel": "6 sentences",
+          "formula": "Subject + be + -ing",
+          "examples": [
+            "• She’s eating.",
+            "• He’s drawing."
+          ],
+          "stateClass": ""
+        }
+      ]
+    },
+    {
+      "id": "grammar-experience",
+      "type": "grammar-experience",
+      "content": {
+        "section_eyebrow_1": "Evidence 03 · Grammar Experience",
+        "section_title_1": "문법을 공식보다",
+        "br_after_1": "‘역할’로 경험했습니다",
+        "strong_1": "딱 보면 아는 영어 – 꼬리표 달기 게임",
+        "strong_after_1": ": 관계대명사 that을 문법 용어로 외우기 전에 앞 명사에 정보를 덧붙여 설명하는 ‘확장 꼬리표(tag)’의 역할로 학습했습니다.\n        ",
+        "g_tab_btn_1": "Example 01",
+        "g_tab_btn_2": "Example 02",
+        "op_plus_1": "+",
+        "section_desc_1": "\n          학습 목적: 관계대명사라는 명칭 암기보다 뒤에 세부 설명을 붙여 명사를 구체화하는 문장의 작동 원리를 체감하는 데 있습니다.\n        ",
+        "label_18": "문법 예시 전환"
+      },
+      "tags": [
+        {
+          "tag_micro_chip": "that is yellow",
+          "state": "default",
+          "stateClass": ""
+        },
+        {
+          "tag_micro_chip": "that is green",
+          "state": "default",
+          "stateClass": ""
+        },
+        {
+          "tag_micro_chip": "that is big",
+          "state": "default",
+          "stateClass": ""
+        },
+        {
+          "tag_micro_chip": "that can fly",
+          "state": "default",
+          "stateClass": ""
+        },
+        {
+          "tag_micro_chip": "that has great sound",
+          "state": "default",
+          "stateClass": ""
+        },
+        {
+          "tag_micro_chip": "that I can connect to my phone",
+          "state": "default",
+          "stateClass": ""
+        }
+      ]
+    },
+    {
+      "id": "teacher-interpretation",
+      "type": "teacher-interpretation",
+      "contentRef": "teacherInterpretation"
+    },
+    {
+      "id": "next-step",
+      "type": "next-step",
+      "contentRef": "nextStep"
+    },
+    {
+      "id": "class-record",
+      "type": "class-record",
+      "content": {
+        "section_eyebrow_1": "Class Record",
+        "section_title_1": "9월 수업 기록",
+        "metric_digits_1": "{{classRecord.scheduled}}",
+        "metric_title_1": "예정 수업",
+        "metric_digits_2": "{{classRecord.actual}}",
+        "metric_title_2": "실제 진행",
+        "metric_digits_3": "+{{classRecord.additional}}",
+        "metric_title_3": "추가 수업",
+        "record_statement_1": "\n        2026년 9월, 총 {{classRecord.actual}}회의 수업을 진행했습니다.\n      "
+      }
+    },
+    {
+      "id": "learning-archive",
+      "type": "learning-archive",
+      "content": {
+        "archive_eyebrow_1": "LEARNING ARCHIVE",
+        "archive_title_1": "결과뿐 아니라",
+        "br_after_1": "과정까지 확인해 보세요.",
+        "archive_body_1": "\n          이 보고서는 한 달 동안의 학습을 요약한 기록입니다.",
+        "br_after_2": "\n          예준이가 실제 수업에서 작성한 학습지와 학습 과정은 Learning Archive에서 확인하실 수 있습니다.\n        ",
+        "archive_meta_tag_1": "최예준 · September Learning Archive",
+        "span_1": "예준이의 학습 기록물 보기",
+        "span_2": "→",
+        "label_8": "학습 아카이브 링크",
+        "label_9": "최예준 학생 학습 기록 구글 드라이브 폴더 열기 (새 창)"
+      }
+    },
+    {
+      "id": "parent-feedback",
+      "type": "parent-feedback",
+      "content": {}
+    },
+    {
+      "id": "brand-ending",
+      "type": "brand-ending",
+      "content": {
+        "footer_brand_1": "LE ENGLISH",
+        "footer_slogan_1": "아는 영어를, 사용할 수 있는 영어로.",
+        "footer_sub_1": "Small Steps · Big English · Brighter Days",
+        "footer_copyright_1": "LE ENGLISH 2026 September Learning Report",
+        "label_4": "브랜드 안내"
+      }
+    }
+  ],
+  "heroStory": {
+    "hero_badge_brand_1": "LE ENGLISH",
+    "hero_badge_term_1": "2026 SEPTEMBER REPORT",
+    "hero_headline_1": "\n        문장을 ‘읽는 아이’에서",
+    "accent_text_1": "문장의 구조를 보는 아이",
+    "accent_text_after_1": "로.\n      ",
+    "label_11": "보고서 개요",
+    "paragraphs": [
+      [
+        {
+          "type": "text",
+          "text": "\n          9월의 예준이는 영어 문장을 단어 하나하나의 뜻으로만 읽는 데서 한 걸음 더 나아갔습니다.\n        "
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "text": "\n          단어의 의미를 확인하고, 문장 속 위치와 관계를 살피며 문장 전체의 의미를 구성하는 경험이 늘어났습니다.\n        "
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "text": "\n          이번 달의 핵심 변화는 학습량 자체보다 "
+        },
+        {
+          "type": "strong",
+          "text": "“영어 문장을 바라보는 방식의 변화”"
+        },
+        {
+          "type": "text",
+          "text": "입니다.\n        "
+        }
+      ]
+    ]
+  },
+  "teacherInterpretation": {
+    "section_eyebrow_1": "Teacher's Interpretation",
+    "section_title_1": "선생님의 관찰",
+    "teacher_quote_1": "\n            “예준이에게 지금 필요한 것은 더 어려운 내용을 빠르게 추가하는 것만이 아니라, 알고 있는 영어를 실제로 사용할 수 있을 만큼 단단하게 만드는 과정입니다.”\n          ",
+    "teacher_sign_1": "LE ENGLISH 교사진 드림",
+    "paragraphs": [
+      [
+        {
+          "type": "text",
+          "text": "\n            예준이는 이제 영어를 단순히 많이 접하는 것보다 이미 배운 영어를 얼마나 정확하게 연결하고 사용할 수 있는가가 중요해지는 단계에 들어가고 있습니다.\n          "
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "text": "\n            9월에는 Reading, Translation, Sentence Building, Grammar 활동을 서로 분리하기보다 한 활동에서 익힌 것을 다른 활동에서 다시 사용하도록 연결했습니다. 그 과정에서 "
+        },
+        {
+          "type": "strong",
+          "text": "단어 → 의미 → 구조 → 문장"
+        },
+        {
+          "type": "text",
+          "text": "으로 영어를 바라보는 범위가 넓어졌습니다.\n          "
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "text": "\n            한편 이미 학습했던 일부 기초 어휘가 즉시 떠오르지 않는 경우도 확인되었습니다. 따라서 앞으로는 새로운 내용을 확장하면서 기존 어휘의 인출 속도와 정확도를 함께 다질 예정입니다.\n          "
+        }
+      ]
+    ]
+  },
+  "nextStep": {
+    "next_step_tag_1": "OCTOBER ROADMAP",
+    "next_step_title_1": "이제, 아는 영어를 입 밖으로.",
+    "next_step_desc_1": "\n          10월에는 9월에 다진 문장 이해와 구조 감각을 Speaking Output으로 연결합니다. 연습했던 문장을 그대로 암송하는 데 그치지 않고, 그림과 상황을 보고 질문을 들은 뒤 알고 있는 단어와 문장 구조를 이용해 즉시 반응하는 훈련을 늘립니다.\n        ",
+    "next_focus_pill_1": "FOCUS: SPEAKING OUTPUT"
+  },
+  "grammarExamples": [
+    {
+      "noun": "the banana",
+      "tag": "that is yellow",
+      "result": "the banana that is yellow",
+      "sourceType": "REPORT_EXAMPLE",
+      "utteranceType": "EXAMPLE_NOT_VERIFIED_STUDENT_UTTERANCE"
+    },
+    {
+      "noun": "a TV",
+      "tag": "that has a big screen",
+      "result": "a TV that has a big screen",
+      "sourceType": "REPORT_EXAMPLE",
+      "utteranceType": "EXAMPLE_NOT_VERIFIED_STUDENT_UTTERANCE"
+    }
+  ]
+}

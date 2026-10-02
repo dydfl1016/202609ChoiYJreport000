@@ -1,0 +1,20 @@
+<section class="report-section" aria-labelledby="continuum-heading">
+      <span class="section-eyebrow">{{content.section_eyebrow_1}}</span>
+      <h2 id="continuum-heading" class="section-title">{{content.section_title_1}}</h2>
+      <p class="section-desc">{{content.section_desc_1}}</p>
+
+      <div class="stepper-container">
+        {{#each module.steps}}<div class="stepper-step reveal-item {{item.stateClass}}">
+          <div class="step-idx">{{item.step_idx}}</div>
+          <div class="step-content">
+            <div class="step-text-group">
+              <span class="step-term">{{item.step_term}}</span>
+              <span class="step-desc">{{item.step_desc}}</span>
+            </div>
+            <span class="step-status-tag">{{item.step_status_tag}}</span>
+          </div>
+        </div>{{/each}}
+      </div>
+    </section>
+
+    
