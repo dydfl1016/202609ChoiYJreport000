@@ -49,3 +49,9 @@ Generate new edited report:
 `node scripts/render.mjs reports/display/kim-soyun-2026-09.json kim-soyun-2026-09.html`
 
 The legacy input route/default is retained for Golden Sample compatibility and historical tests. New editorial reports must use the display path explicitly. The renderer does not decide which source statements matter or evaluate whether copy is well edited; that is a human editorial review responsibility. No CMS, framework, backend, journal ingestion or automatic narrative generator is introduced.
+
+## Publishing presentation revision (Phase 3.2)
+
+Soyun reportRevision 3 uses the user-provided Final Publishing Copy as primary display authority; editorial.status is reviewed for that supplied input. `editorial.publishingCopy` records path, sha256 and authority. The byte-exact supplied input is retained separately from the full Master. Provenance hash is checked by the publishing static test; the existing runtime layer still validates Master identity/revision/hashes.
+
+Editorial-learning adds panels[{title,formula,text,examples[]}] and takeaways[string]; authors provide empty arrays when unused. Editorial-next-step now uses transferFlow[{label,example}], supportingCopy, goal and closing. Hero adds term. These are generic publishing presentation slots, not student conditions. No renderer/core rewrite or automatic editorial automation. Historical Phase3.1 validation describes its earlier output; the current report is documented in PUBLISHING_COPY_VALIDATION.md.

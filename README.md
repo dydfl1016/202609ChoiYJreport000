@@ -33,3 +33,7 @@ Run `node tests/engine.test.mjs` and `python tests/parity.py` (the latter uses l
 Module array order controls display order. Omitting a module creates no placeholder. Arrays support different paragraph, word, pattern, example and continuum-step counts. Repeated module IDs must be unique. Add a future layout and its registry entry to support a new module; no composer rewrite is necessary.
 
 PR #1 remains untouched and unmerged. This separate branch implements the approved feedback direction as an Engine component. The overlapping Feedback changes must be reconciled during a later review; do not blindly merge both PRs.
+
+### 김소윤 최종 Publishing Copy (Phase 3.2)
+
+Download/open `kim-soyun-2026-09-publishing-v3.html` for the latest publishing revision. It is identical to the updated `kim-soyun-2026-09.html`; the distinct filename prevents confusion with old downloads. Generate from `reports/display/kim-soyun-2026-09.json`, not the long Master JSON. See `docs/PUBLISHING_COPY_VALIDATION.md` for scope and browser QA limitations. No production deployment.

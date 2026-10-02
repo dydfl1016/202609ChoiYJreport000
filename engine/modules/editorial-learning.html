@@ -4,6 +4,8 @@
   <div class="editorial-card">
     <div class="section-desc">{{#each content.paragraphs}}<p>{{rich:item}}</p>{{/each}}</div>
     {{#each content.exampleGroups}}<div class="editorial-evidence"><h3>{{item.label}}</h3><ul>{{#each item.items}}<li>{{item}}</li>{{/each}}</ul></div>{{/each}}
+    <div class="editorial-panels">{{#each content.panels}}<div class="editorial-panel"><h3>{{item.title}}</h3><strong class="editorial-formula">{{item.formula}}</strong><p>{{item.text}}</p><ul>{{#each item.examples}}<li>{{item}}</li>{{/each}}</ul></div>{{/each}}</div>
+    {{#each content.takeaways}}<p class="editorial-takeaway">{{item}}</p>{{/each}}
     {{#each content.callouts}}<aside class="editorial-callout"><h3>{{item.label}}</h3><p>{{item.text}}</p></aside>{{/each}}
     {{#each content.details}}<details class="editorial-details"><summary>{{item.summary}}</summary><ul>{{#each item.items}}<li>{{item}}</li>{{/each}}</ul></details>{{/each}}
   </div>

@@ -28,3 +28,24 @@
 @media(max-width:480px) { .editorial-card { padding:20px; } .editorial-flow { grid-template-columns:1fr; } .editorial-flow li { display:flex; align-items:center; gap:10px; } .editorial-flow strong { flex:0 1 46%; } .editorial-flow span { margin:0; } }
 
 .editorial-next-step .next-step-tag { font-size:.875rem; }
+
+/* Generic publishing variants; no student-specific selectors. */
+.editorial-hero .hero-headline,.editorial-subtitle,.editorial-section .section-title,.editorial-next-step .next-step-title,.editorial-closing { white-space:pre-line; }
+.editorial-flow { grid-template-columns:repeat(4,minmax(0,1fr)); }
+.editorial-takeaway { margin-top:18px; padding:14px 16px; background:var(--color-accent-subtle); border-left:3px solid var(--color-accent); border-radius:0 10px 10px 0; font-size:1rem; font-weight:600; }
+.editorial-panels { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:12px; }
+.editorial-panels:empty { display:none; }
+.editorial-panel { min-width:0; padding:16px; background:var(--color-surface-subtle); border:1px solid var(--color-border); border-radius:var(--radius-md); }
+.editorial-panel h3 { font-size:1rem; }
+.editorial-panel p { font-size:1rem; line-height:1.8; margin:12px 0; }
+.editorial-formula { display:block; color:var(--color-accent); font-size:1rem; }
+.editorial-panel ul { list-style:none; padding:0; }
+.editorial-panel li { padding:8px 0; font-size:1rem; overflow-wrap:anywhere; }
+.editorial-transfer-board { list-style:none; padding:0; margin:20px 0; display:grid; gap:8px; }
+.editorial-transfer-board li { padding:16px; border:1px solid rgba(255,255,255,.2); border-radius:12px; background:rgba(255,255,255,.06); }
+.editorial-transfer-board li + li::before { content:'↓'; display:block; color:#93c5fd; margin-bottom:8px; }
+.editorial-transfer-board span,.editorial-october-goal span { display:block; font-size:.875rem; color:#93c5fd; }
+.editorial-transfer-board strong,.editorial-october-goal strong { display:block; font-size:1rem; overflow-wrap:anywhere; margin-top:6px; }
+.editorial-october-goal { margin-top:20px; padding-top:16px; border-top:1px solid rgba(255,255,255,.2); }
+.editorial-closing { font-size:1rem; font-weight:600; margin-top:20px; }
+@media(max-width:480px) { .editorial-flow { grid-template-columns:repeat(2,minmax(0,1fr)); } .editorial-flow li { display:block; } .editorial-flow span { margin-top:6px; } .editorial-panels { grid-template-columns:1fr; } }

@@ -16,11 +16,11 @@ assert(!output.includes('sourceNarrativeSha256'),'Internal editorial metadata do
 assert.deepEqual(prepared.classRecord,{scheduled:16,actual:17,additional:1});
 assert.deepEqual(prepared.evidence,master.evidence);
 assert.deepEqual(prepared.archiveReference,master.archiveReference);
-assert(!prepared.modules.some(m=>m.id==='monthly-overview'));
+assert(prepared.modules.some(m=>m.id==='monthly-overview'));
 assert.equal(prepared.modules.find(m=>m.id==='grammar-experience').content.emphasis,'secondary');
-assert(prepared.modules.find(m=>m.id==='reading-translation').content.callouts[0].text.includes('9/7'));
-assert.equal((output.match(/<details /g)||[]).length,3);
-assert.equal((output.match(/<summary>/g)||[]).length,3);
+assert(prepared.modules.find(m=>m.id==='reading-translation').content.callouts[0].text.includes('9월 7일'));
+assert.equal((output.match(/<details /g)||[]).length,0);
+assert.equal((output.match(/<summary>/g)||[]).length,0);
 const clone=()=>structuredClone(display);
 let invalid=clone();invalid.studentId='other';assert.throws(()=>prepareDisplayReport(master,invalid,source,narrative),/identity mismatch/);
 invalid=clone();invalid.editorial.sourceReportRevision=99;assert.throws(()=>prepareDisplayReport(master,invalid,source,narrative),/source revision mismatch/);
@@ -34,7 +34,7 @@ invalid=clone();invalid.editorial.status='automatically-generated';assert.throws
 invalid=clone();invalid.modules[1].content.emphasis='onclick';assert.throws(()=>prepareDisplayReport(master,invalid,source,narrative),/emphasis/);
 const inject=clone();inject.heroStory.title='<script>alert(1)</script>';assert((await renderReport(prepareDisplayReport(master,inject,source,narrative))).includes('&lt;script&gt;'));
 // Array composition remains independent of a student or universal module order.
-const changed=clone();[changed.modules[1],changed.modules[3]]=[changed.modules[3],changed.modules[1]];
+const changed=clone();[changed.modules[2],changed.modules[4]]=[changed.modules[4],changed.modules[2]];
 const reordered=await renderReport(prepareDisplayReport(master,changed,source,narrative));assert(reordered.indexOf('speaking-transfer-learning-heading')<reordered.indexOf('reading-translation-learning-heading'));
 const choi=await loadEditorialReport('reports/choi-yejun-2026-09.json');assert.equal(await renderReport(choi),await readFile('index.html','utf8'));
 console.log('PASS: separate editorial contract, immutable source, provenance, source drift/identity/fact guards, concise composition, disclosure, escaping and Golden byte parity');
