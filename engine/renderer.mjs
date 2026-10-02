@@ -4,7 +4,7 @@ const moduleDirectory = new URL('./modules/',import.meta.url);
 // Extension point: register a template and its data requirements, without changing composition.
 export const moduleRegistry = Object.freeze(Object.fromEntries([
  'hero','overview','learning-continuum','reading-vocabulary','sentence-building',
- 'grammar-experience','teacher-interpretation','next-step','class-record','learning-archive','brand-ending'
+ 'learning-narrative','grammar-experience','teacher-interpretation','next-step','class-record','learning-archive','brand-ending'
 ].map(type => [type,{template:new URL(`${type}.html`,moduleDirectory)}])));
 const escape = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const get = (object,path) => path.split('.').reduce((v,k)=>v?.[k],object);

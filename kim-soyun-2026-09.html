@@ -1,0 +1,1333 @@
+<!DOCTYPE html>
+<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>LE ENGLISH 2026-09 Learning Report | 김소윤</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Pretendard:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><style>
+    /* ==================================================
+       1. DESIGN SYSTEM & CSS VARIABLES
+       ================================================== */
+    :root {
+      /* Brand Palette: Deep Navy & Educational Blue */
+      --color-primary: #0F172A;          /* Slate 900 */
+      --color-primary-light: #1E293B;    /* Slate 800 */
+      --color-accent: #1D4ED8;           /* Blue 700 */
+      --color-accent-subtle: #EFF6FF;     /* Blue 50 */
+      --color-accent-border: #BFDBFE;     /* Blue 200 */
+      
+      --color-teal: #0D9488;             /* Teal 600 - Observed state */
+      --color-teal-subtle: #F0FDFA;       /* Teal 50 */
+      --color-teal-border: #99F6E4;       /* Teal 200 */
+
+      --color-bg: #F8FAFC;               /* Slate 50 */
+      --color-surface: #FFFFFF;
+      --color-surface-subtle: #F1F5F9;   /* Slate 100 */
+      --color-border: #E2E8F0;           /* Slate 200 */
+
+      --color-text-main: #0F172A;
+      --color-text-body: #334155;        /* Slate 700 */
+      --color-text-muted: #64748B;       /* Slate 500 */
+      --color-text-light: #94A3B8;       /* Slate 400 */
+
+      /* Typography */
+      --font-ko: 'Pretendard', -apple-system, BlinkMacSystemFont, system-ui, Roboto, sans-serif;
+      --font-en: 'Plus Jakarta Sans', var(--font-ko);
+
+      /* Layout */
+      --container-max-w: 640px;
+      --radius-sm: 8px;
+      --radius-md: 14px;
+      --radius-lg: 20px;
+      --radius-full: 9999px;
+
+      /* Elevation */
+      --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.04);
+      --shadow-card: 0 4px 12px -2px rgba(15, 23, 42, 0.05), 0 2px 4px -1px rgba(15, 23, 42, 0.02);
+      --shadow-elevated: 0 12px 28px -4px rgba(15, 23, 42, 0.08), 0 4px 10px -2px rgba(15, 23, 42, 0.03);
+
+      /* Motion */
+      --timing-smooth: cubic-bezier(0.16, 1, 0.3, 1);
+      --duration-normal: 0.5s;
+    }
+
+    /* ==================================================
+       2. RESET & BASE RULES
+       ================================================== */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--color-bg);
+      color: var(--color-text-body);
+      font-family: var(--font-ko);
+      font-size: 16px;
+      line-height: 1.78;
+      letter-spacing: -0.015em;
+      word-break: keep-all;
+      overflow-wrap: break-word;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    img, svg {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    button, input, textarea {
+      font-family: inherit;
+      font-size: 1rem;
+    }
+
+    .report-shell {
+      max-width: var(--container-max-w);
+      margin: 0 auto;
+      padding: 0 20px 80px 20px;
+    }
+
+    /* Standard Section Structure */
+    .report-section {
+      padding: 44px 0;
+    }
+
+    .section-eyebrow {
+      display: inline-block;
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      color: var(--color-accent);
+      margin-bottom: 6px;
+    }
+
+    .section-title {
+      font-size: 1.4375rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      line-height: 1.4;
+      letter-spacing: -0.025em;
+      margin-bottom: 12px;
+    }
+
+    .section-desc {
+      font-size: 0.96875rem;
+      color: var(--color-text-body);
+      line-height: 1.75;
+      margin-bottom: 20px;
+    }
+
+    .content-card {
+      background: var(--color-surface);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      border: 1px solid var(--color-border);
+      box-shadow: var(--shadow-card);
+    }
+
+    /* Scroll Reveal Engine */
+    .reveal-item {
+      opacity: 1;
+      transform: none;
+      transition: opacity 0.6s var(--timing-smooth), transform 0.6s var(--timing-smooth);
+      will-change: opacity, transform;
+    }
+
+    .reveal-item.revealed {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ==================================================
+       01 HERO
+       ================================================== */
+    .report-hero {
+      padding: 60px 0 36px 0;
+    }
+
+    .hero-meta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 24px;
+    }
+
+    .hero-badge-brand {
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+    }
+
+    .hero-badge-student {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-text-body);
+      background: var(--color-surface-subtle);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+      border: 1px solid var(--color-border);
+    }
+
+    .hero-badge-term {
+      font-family: var(--font-en);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      background: var(--color-accent-subtle);
+      padding: 4px 10px;
+      border-radius: var(--radius-sm);
+    }
+
+    .hero-headline {
+      font-size: 1.875rem;
+      font-weight: 700;
+      line-height: 1.35;
+      color: var(--color-primary);
+      margin-bottom: 18px;
+      letter-spacing: -0.035em;
+    }
+
+    .hero-headline span.accent-text {
+      color: var(--color-accent);
+    }
+
+    .hero-narrative {
+      font-size: 1rem;
+      line-height: 1.8;
+      color: var(--color-text-body);
+      border-left: 2px solid var(--color-accent-border);
+      padding-left: 16px;
+    }
+
+    .hero-narrative p + p {
+      margin-top: 10px;
+    }
+
+    /* ==================================================
+       02 MONTH AT A GLANCE
+       ================================================== */
+    .snapshot-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+    }
+
+    .snapshot-cell {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 16px 14px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+    }
+
+    .snapshot-metric {
+      font-family: var(--font-en);
+      font-size: 1.875rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 6px;
+    }
+
+    .snapshot-cell.highlight-cell .snapshot-metric {
+      color: var(--color-accent);
+    }
+
+    .snapshot-label {
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-text-main);
+      margin-bottom: 2px;
+    }
+
+    .snapshot-sub {
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      line-height: 1.35;
+    }
+
+    /* ==================================================
+       03 LEARNING CONTINUUM
+       ================================================== */
+    .stepper-container {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      margin-top: 16px;
+    }
+
+    .stepper-step {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      padding: 12px 14px;
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      transition: border-color 0.3s ease;
+    }
+
+    .stepper-step.active-phase {
+      border-color: var(--color-accent-border);
+      background: var(--color-accent-subtle);
+    }
+
+    .stepper-step.next-phase {
+      border-style: dashed;
+      background: #FAFAFA;
+    }
+
+    .step-idx {
+      width: 28px;
+      height: 28px;
+      border-radius: var(--radius-sm);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: var(--font-en);
+      font-weight: 700;
+      font-size: 0.75rem;
+      background: var(--color-surface-subtle);
+      color: var(--color-text-muted);
+      flex-shrink: 0;
+    }
+
+    .stepper-step.active-phase .step-idx {
+      background: var(--color-accent);
+      color: #FFFFFF;
+    }
+
+    .step-content {
+      flex: 1;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      min-width: 0;
+    }
+
+    .step-text-group {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .step-term {
+      font-family: var(--font-en);
+      font-size: 0.875rem;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+      color: var(--color-primary);
+    }
+
+    .step-desc {
+      font-size: 0.8125rem;
+      color: var(--color-text-body);
+    }
+
+    .step-status-tag {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: var(--radius-full);
+      white-space: nowrap;
+      background: var(--color-surface-subtle);
+      color: var(--color-text-muted);
+    }
+
+    .stepper-step.active-phase .step-status-tag {
+      background: #DBEAFE;
+      color: var(--color-accent);
+    }
+
+    /* ==================================================
+       04 EVIDENCE 01: READING & VOCABULARY
+       ================================================== */
+    .stream-diagram {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--color-surface-subtle);
+      padding: 10px 14px;
+      border-radius: var(--radius-sm);
+      margin: 16px 0;
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.05em;
+      color: var(--color-primary);
+    }
+
+    .stream-diagram span.stream-arrow {
+      color: var(--color-text-light);
+    }
+
+    .chips-cloud {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin: 16px 0;
+    }
+
+    .vocab-pill {
+      font-family: var(--font-en);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-primary-light);
+      background: var(--color-surface-subtle);
+      border: 1px solid var(--color-border);
+      padding: 4px 10px;
+      border-radius: var(--radius-full);
+    }
+
+    .growing-next-box {
+      background: var(--color-teal-subtle);
+      border: 1px solid var(--color-teal-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      margin-top: 18px;
+    }
+
+    .growing-next-eyebrow {
+      font-family: var(--font-en);
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.06em;
+      color: var(--color-teal);
+      text-transform: uppercase;
+      margin-bottom: 6px;
+    }
+
+    .growing-next-text {
+      font-size: 0.875rem;
+      line-height: 1.7;
+      color: #115E59;
+    }
+
+    .word-token {
+      font-family: var(--font-en);
+      font-weight: 700;
+      background: rgba(13, 148, 136, 0.12);
+      padding: 1px 6px;
+      border-radius: 4px;
+      color: #0F766E;
+    }
+
+    /* ==================================================
+       05 EVIDENCE 02: SENTENCE BUILDING
+       ================================================== */
+    .pattern-card-grid {
+      display: flex;
+      flex-direction: column;
+      gap: 12px;
+      margin: 16px 0;
+    }
+
+    .pattern-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+      box-shadow: var(--shadow-sm);
+    }
+
+    .pattern-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 8px;
+    }
+
+    .pattern-tag {
+      font-family: var(--font-en);
+      font-size: 0.6875rem;
+      font-weight: 800;
+      color: var(--color-accent);
+      background: var(--color-accent-subtle);
+      padding: 2px 8px;
+      border-radius: 4px;
+      letter-spacing: 0.05em;
+    }
+
+    .pattern-metric {
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+
+    .pattern-formula {
+      font-family: var(--font-en);
+      font-size: 0.8125rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+
+    .pattern-examples {
+      background: var(--color-surface-subtle);
+      border-radius: var(--radius-sm);
+      padding: 10px 12px;
+    }
+
+    .sample-sentence {
+      font-family: var(--font-en);
+      font-size: 0.875rem;
+      color: var(--color-text-body);
+      line-height: 1.5;
+    }
+
+    .sample-sentence + .sample-sentence {
+      margin-top: 4px;
+    }
+
+    .building-summary-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid var(--color-border);
+      padding-top: 14px;
+      margin-top: 14px;
+      font-size: 0.875rem;
+    }
+
+    .building-summary-count {
+      font-family: var(--font-en);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+    }
+
+    .structure-chain {
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--color-text-muted);
+    }
+
+    /* ==================================================
+       06 EVIDENCE 03: GRAMMAR EXPERIENCE
+       ================================================== */
+    .grammar-stage {
+      background: #F8FAFC;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 18px 14px;
+      margin: 16px 0;
+      text-align: center;
+    }
+
+    .grammar-tabs {
+      display: flex;
+      justify-content: center;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .g-tab-btn {
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 6px 14px;
+      border-radius: var(--radius-full);
+      background: #FFFFFF;
+      border: 1px solid var(--color-border);
+      color: var(--color-text-muted);
+      cursor: pointer;
+      touch-action: manipulation;
+      min-height: 36px;
+    }
+
+    .g-tab-btn.active {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      border-color: var(--color-primary);
+    }
+
+    .g-visual-row {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 14px;
+    }
+
+    .noun-box {
+      font-family: var(--font-en);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      background: #FFFFFF;
+      border: 1.5px solid var(--color-primary);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      position: relative;
+    }
+
+    .noun-box::after {
+      content: 'Noun';
+      position: absolute;
+      top: -8px;
+      left: 8px;
+      font-size: 0.5625rem;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+
+    .op-plus {
+      font-weight: 700;
+      color: var(--color-text-light);
+    }
+
+    .tag-box {
+      font-family: var(--font-en);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      color: var(--color-accent);
+      background: var(--color-accent-subtle);
+      border: 1.5px dashed var(--color-accent);
+      border-radius: var(--radius-sm);
+      padding: 8px 12px;
+      position: relative;
+    }
+
+    .tag-box::after {
+      content: 'That Tag';
+      position: absolute;
+      top: -8px;
+      left: 8px;
+      font-size: 0.5625rem;
+      background: var(--color-accent);
+      color: #FFFFFF;
+      padding: 0 4px;
+      border-radius: 3px;
+    }
+
+    .result-display-box {
+      background: #FFFFFF;
+      border: 1px solid var(--color-accent-border);
+      border-radius: var(--radius-sm);
+      padding: 10px;
+      font-family: var(--font-en);
+      font-size: 1rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      box-shadow: var(--shadow-sm);
+    }
+
+    .tag-chips-wrap {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-top: 14px;
+    }
+
+    .tag-micro-chip {
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-accent);
+      background: var(--color-accent-subtle);
+      border: 1px solid var(--color-accent-border);
+      padding: 3px 8px;
+      border-radius: 4px;
+    }
+
+    /* ==================================================
+       07 TEACHER'S NOTE
+       ================================================== */
+    .teacher-card {
+      background: #FFFFFF;
+      border: 1px solid #CBD5E1;
+      border-radius: var(--radius-lg);
+      padding: 28px 20px;
+      position: relative;
+    }
+
+    .teacher-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 20px;
+      width: 44px;
+      height: 3px;
+      background: var(--color-accent);
+      border-radius: 0 0 3px 3px;
+    }
+
+    .teacher-quote {
+      font-size: 0.9375rem;
+      font-weight: 700;
+      line-height: 1.65;
+      color: var(--color-primary);
+      background: var(--color-surface-subtle);
+      border-left: 3px solid var(--color-primary);
+      padding: 12px 14px;
+      margin: 18px 0;
+      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
+    }
+
+    .teacher-sign {
+      text-align: right;
+      font-size: 0.8125rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+      margin-top: 16px;
+    }
+
+    /* ==================================================
+       08 OCTOBER NEXT STEP (Informational Card - No Fake CTA)
+       ================================================== */
+    .next-step-card {
+      background: var(--color-primary);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+    }
+
+    .next-step-tag {
+      display: inline-block;
+      font-family: var(--font-en);
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      background: rgba(255, 255, 255, 0.15);
+      color: #93C5FD;
+      padding: 3px 8px;
+      border-radius: 4px;
+      margin-bottom: 10px;
+    }
+
+    .next-step-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+
+    .next-step-desc {
+      font-size: 0.9375rem;
+      line-height: 1.7;
+      color: #CBD5E1;
+    }
+
+    .next-focus-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      margin-top: 16px;
+      background: rgba(29, 78, 216, 0.4);
+      border: 1px solid #3B82F6;
+      padding: 6px 12px;
+      border-radius: var(--radius-full);
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: #DBEAFE;
+      letter-spacing: 0.04em;
+    }
+
+    /* ==================================================
+       09 SEPTEMBER CLASS RECORD
+       ================================================== */
+    .record-metric-row {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 8px;
+      margin: 14px 0;
+    }
+
+    .record-metric-card {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-md);
+      padding: 16px 8px;
+      text-align: center;
+    }
+
+    .record-metric-card.active-metric {
+      border-color: var(--color-accent-border);
+      background: var(--color-accent-subtle);
+    }
+
+    .metric-digits {
+      font-family: var(--font-en);
+      font-size: 2rem;
+      font-weight: 800;
+      color: var(--color-primary);
+      line-height: 1;
+      margin-bottom: 4px;
+    }
+
+    .record-metric-card.active-metric .metric-digits {
+      color: var(--color-accent);
+    }
+
+    .metric-title {
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: var(--color-text-muted);
+    }
+
+    .record-statement {
+      font-size: 0.875rem;
+      color: var(--color-text-muted);
+      text-align: center;
+      margin-top: 6px;
+    }
+
+    /* ==================================================
+       10 LEARNING ARCHIVE CTA
+       ================================================== */
+    .archive-card {
+      background: linear-gradient(135deg, #0F172A 0%, #1E293B 100%);
+      color: #FFFFFF;
+      border-radius: var(--radius-lg);
+      padding: 30px 20px;
+      text-align: center;
+      box-shadow: var(--shadow-elevated);
+    }
+
+    .archive-eyebrow {
+      display: inline-block;
+      font-family: var(--font-en);
+      font-size: 0.6875rem;
+      font-weight: 800;
+      letter-spacing: 0.1em;
+      color: #93C5FD;
+      margin-bottom: 8px;
+    }
+
+    .archive-title {
+      font-size: 1.375rem;
+      font-weight: 700;
+      line-height: 1.35;
+      margin-bottom: 10px;
+      color: #FFFFFF;
+    }
+
+    .archive-body {
+      font-size: 0.875rem;
+      line-height: 1.65;
+      color: #94A3B8;
+      max-width: 440px;
+      margin: 0 auto 20px auto;
+    }
+
+    .archive-meta-tag {
+      font-size: 0.8125rem;
+      color: #CBD5E1;
+      margin-bottom: 18px;
+    }
+
+    .archive-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      width: 100%;
+      max-width: 320px;
+      min-height: 52px;
+      background: #FFFFFF;
+      color: var(--color-primary);
+      font-size: 0.9375rem;
+      font-weight: 700;
+      border-radius: var(--radius-full);
+      cursor: pointer;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      transition: transform 0.2s ease, background 0.2s ease;
+      touch-action: manipulation;
+    }
+
+    .archive-btn:hover {
+      transform: translateY(-2px);
+      background: #F8FAFC;
+    }
+
+    .archive-btn:active {
+      transform: translateY(0);
+    }
+
+    /* ==================================================
+       11 PARENT FEEDBACK COMPONENT
+       ================================================== */
+    .feedback-form-container {
+      background: var(--color-surface);
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-lg);
+      padding: 24px 20px;
+      box-shadow: var(--shadow-card);
+    }
+
+    .fb-group {
+      margin-bottom: 22px;
+    }
+
+    .fb-label {
+      display: block;
+      font-size: 0.875rem;
+      font-weight: 700;
+      color: var(--color-primary);
+      margin-bottom: 10px;
+    }
+
+    .selectable-chip-grid {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .choice-chip {
+      display: inline-flex;
+      align-items: center;
+      cursor: pointer;
+      user-select: none;
+    }
+
+    .choice-chip input[type="radio"],
+    .choice-chip input[type="checkbox"] {
+      position: absolute;
+      opacity: 0;
+      width: 0;
+      height: 0;
+    }
+
+    .chip-visual {
+      font-size: 0.8125rem;
+      font-weight: 500;
+      color: var(--color-text-body);
+      background: var(--color-surface-subtle);
+      border: 1px solid var(--color-border);
+      padding: 8px 14px;
+      border-radius: var(--radius-full);
+      min-height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      transition: all 0.2s ease;
+      touch-action: manipulation;
+    }
+
+    .choice-chip input:checked + .chip-visual {
+      background: var(--color-accent-subtle);
+      border-color: var(--color-accent);
+      color: var(--color-accent);
+      font-weight: 700;
+    }
+
+    .choice-chip input:focus-visible + .chip-visual {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 2px;
+    }
+
+    .fb-textarea {
+      width: 100%;
+      min-height: 90px;
+      padding: 12px;
+      border: 1px solid var(--color-border);
+      border-radius: var(--radius-sm);
+      resize: vertical;
+      color: var(--color-text-main);
+      background: #FAFAFA;
+      transition: border-color 0.2s ease;
+    }
+
+    .fb-textarea:focus {
+      outline: none;
+      border-color: var(--color-accent);
+      background: #FFFFFF;
+    }
+
+    .feedback-submit-btn {
+      width: 100%;
+      min-height: 48px;
+      background: var(--color-primary);
+      color: #FFFFFF;
+      font-size: 0.9375rem;
+      font-weight: 700;
+      border: none;
+      border-radius: var(--radius-md);
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      transition: background 0.2s ease;
+      touch-action: manipulation;
+    }
+
+    .feedback-submit-btn:hover {
+      background: var(--color-primary-light);
+    }
+
+    /* Feedback Demo Response Toast/Banner */
+    .fb-status-banner {
+      display: none;
+      background: #FEF3C7;
+      border: 1px solid #FCD34D;
+      color: #92400E;
+      border-radius: var(--radius-sm);
+      padding: 12px;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      margin-top: 14px;
+    }
+
+    .fb-status-banner.visible {
+      display: block;
+    }
+
+    /* ==================================================
+       12 BRAND ENDING
+       ================================================== */
+    .brand-footer {
+      padding: 60px 0 20px 0;
+      text-align: center;
+      border-top: 1px solid var(--color-border);
+      margin-top: 40px;
+    }
+
+    .footer-brand {
+      font-family: var(--font-en);
+      font-size: 1.0625rem;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      color: var(--color-primary);
+      margin-bottom: 8px;
+    }
+
+    .footer-slogan {
+      font-size: 0.9375rem;
+      font-weight: 600;
+      color: var(--color-text-body);
+      margin-bottom: 12px;
+    }
+
+    .footer-sub {
+      font-family: var(--font-en);
+      font-size: 0.75rem;
+      color: var(--color-text-muted);
+      letter-spacing: 0.04em;
+      margin-bottom: 20px;
+    }
+
+    .footer-copyright {
+      font-size: 0.6875rem;
+      color: var(--color-text-light);
+      font-family: var(--font-en);
+    }
+
+    /* ==================================================
+       ACCESSIBILITY & REDUCED MOTION
+       ================================================== */
+    @media (prefers-reduced-motion: reduce) {
+      .reveal-item {
+        opacity: 1 !important;
+        transform: none !important;
+        transition: none !important;
+      }
+      .archive-btn, .chip-visual, .g-tab-btn {
+        transition: none !important;
+      }
+    }
+  
+/* Intentional accessibility improvements; original palette and geometry retained. */
+.section-desc,.next-step-desc,.archive-body,.teacher-quote,.growing-next-text,.sample-sentence,.pattern-formula { font-size: 1rem; }
+.fb-label,.chip-visual,.snapshot-label,.step-desc,.metric-title { font-size: .875rem; }
+.g-tab-btn { min-height:44px; min-width:44px; font-size:.875rem; }
+a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid var(--color-accent); outline-offset:3px; }
+.fb-group { border:0; padding:0; min-width:0; margin:0 0 22px; }
+.feedback-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
+.choice-chip { position:relative; min-width:0; }
+.chip-visual { width:100%; min-height:48px; text-align:center; padding:10px 12px; }
+.choice-chip input:checked + .chip-visual { box-shadow:inset 0 0 0 1px var(--color-accent); }
+.building-summary-bar,.pattern-header,.step-content { flex-wrap:wrap; gap:8px; }
+.snapshot-grid,.record-metric-row { grid-template-columns:repeat(2,minmax(0,1fr)); }
+.record-metric-row { grid-template-columns:repeat(3,minmax(0,1fr)); }
+.stream-diagram { flex-wrap:wrap; gap:6px; }
+.structure-chain,.pattern-tag,.step-text-group { min-width:0; overflow-wrap:anywhere; }
+.feedback-note { font-size:.875rem; color:var(--color-text-muted); margin-bottom:12px; }
+@media(max-width:359px) { .feedback-options,.snapshot-grid,.record-metric-row { grid-template-columns:1fr; } }
+@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } .archive-btn:hover { transform:none; } }
+</style></head><body><main class="report-shell"><header class="report-hero" aria-label="보고서 개요">
+      <div class="hero-meta reveal-item">
+        <span class="hero-badge-brand">LE ENGLISH</span>
+        <span class="hero-badge-student">김소윤 학생 · 초등학교 3학년</span>
+        <span class="hero-badge-term">2026 · September</span>
+      </div>
+
+      <h1 class="hero-headline reveal-item">읽은 영어가 다시<br>
+        <span class="accent-text">문장이 되기 시작했습니다</span></h1>
+
+      <div class="hero-narrative reveal-item">
+        <p>해석하고, 조립하고, 말해보며 문장을 자기 것으로 만들어간 9월</p>
+<p>김소윤 학생의 9월은 한 가지 기능의 향상보다 영어를 처리하는 방식이 여러 방향으로 연결된 달이었습니다.</p>
+<p>월초에는 Reading 지문을 읽고 직접 우리말로 옮기며 문장의 의미를 파악했습니다. 9월 3일에는 전날 학습한 문장을 바탕으로 선생님이 한국어로 말하면 영어 문장을 다시 만들어 말했고, 한 문장을 여러 번 반복하며 머리로 알고 있는 문장을 실제 발화로 옮기는 연습을 했습니다.</p>
+<p>월 중반에는 현재완료를 ‘과거에서 현재로 이어지는 시간’으로, 관계대명사 that을 명사 뒤에 붙는 ‘설명 꼬리표’로 경험했습니다. 후반에는 Translation과 Unscramble 활동을 통해 영어 문장을 해석하는 데서 다시 영어 어순으로 조립하는 활동으로 이어졌습니다.</p>
+<p>따라서 김소윤의 9월을 가장 잘 설명하는 변화는 단순히 “문장을 많이 배웠다”가 아닙니다.</p>
+<p>읽고 뜻을 이해한 영어를 다시 배열하고, 설명을 붙여 확장하고, 입으로 꺼내보는 경험이 서로 연결되기 시작했다는 것이 이번 달의 핵심입니다.</p>
+      </div>
+    </header>
+
+    
+<section class="report-section" aria-labelledby="monthly-overview-narrative-heading">
+  <div class="reveal-item">
+    <span class="section-eyebrow">Monthly Overview</span>
+    <h2 id="monthly-overview-narrative-heading" class="section-title">9월 학습의 전체 흐름</h2>
+  </div>
+  <div class="teacher-card reveal-item">
+    <div class="section-desc">
+      <p>9월에는 Reading 지문을 활용한 문장 해석 활동이 꾸준히 이어졌습니다. 우유와 유제품, 동물의 감각, 우리 동네, 공기의 사용, 시간, 물고기, 반 고흐의 그림, 국기, 낮과 밤 등 다양한 소재의 영어 문장을 읽으며 모르는 어휘를 확인하고 직접 우리말 의미를 적었습니다.</p>
+<p>그러나 이번 달 학습은 ‘영어 → 한국어 해석’에만 머물지 않았습니다.</p>
+<p>배운 문장을 다시 영어로 말하는 반복 발화, 이중자음·이중모음 파닉스 복습, 현재완료와 관계대명사 that을 시각적 이야기로 경험하는 문법 활동, 흩어진 단어를 올바른 영어 어순으로 배열하는 Unscramble까지 이어졌습니다.</p>
+<p>특히 월 후반에는 It&#39;s under the desk., I practice the piano., My favorite sport is baseball.처럼 주어진 단어를 문장 구조에 맞게 다시 배열하는 활동이 반복되었습니다.</p>
+<p>9월의 여러 수업을 함께 놓고 보면 김소윤은 영어를 읽어 뜻을 알아내는 활동과 영어를 다시 구성해 표현하는 활동을 오가며 문장 감각을 쌓은 한 달이었습니다.</p>
+      
+      
+    </div>
+  </div>
+</section>
+
+<section class="report-section" aria-labelledby="reading-translation-narrative-heading">
+  <div class="reveal-item">
+    <span class="section-eyebrow">Reading &amp; Translation</span>
+    <h2 id="reading-translation-narrative-heading" class="section-title">문장을 끝까지 읽고 의미를 만들어보기</h2>
+  </div>
+  <div class="teacher-card reveal-item">
+    <div class="section-desc">
+      <p>9월의 가장 지속적인 학습 축은 Reading과 Translation이었습니다.</p>
+<p>9월 2일 What We Make with Milk, 3D Shapes를 시작으로 9일 Amazing Animal Senses, My Neighborhood, 18일 How We Use Air, What Time Is It There?, 28일 Hello, Fish!, Van Gogh&#39;s Paintings, 29일 Flags, Flags, Day and Night까지 다양한 Nonfiction 지문을 다루었습니다.</p>
+<p>단어 하나의 뜻만 맞히기보다 문장 전체가 무엇을 말하는지 파악하여 우리말로 옮기는 과정을 반복했습니다. 모르는 어휘는 표시하고 뜻을 확인한 뒤 다시 원래 문장으로 돌아가 의미를 연결했습니다.</p>
+<p>이 과정에서 There is / There are, look + 형용사, from left to right, You can see ~ 등 여러 표현도 실제 문맥 안에서 만났습니다.</p>
+<p>성장의 의미: 초3 단계에서 어휘를 개별적으로 축적하는 것과 동시에, 어휘가 문장 안에서 어떤 의미를 만드는지를 경험하는 읽기가 지속되고 있습니다.</p>
+      
+      <aside class="teacher-quote"><h3>소리의 기초도 함께 점검했습니다</h3><p>9월 7일에는 이중자음과 이중모음이 포함된 단어를 중심으로 파닉스 복습을 진행했습니다.</p>
+<p>9월의 중심 학습은 점차 문장 수준으로 확장되고 있었지만, 단어를 보고 소리로 연결하는 기초 기능 역시 별도로 점검했습니다.</p></aside>
+    </div>
+  </div>
+</section>
+
+<section class="report-section" aria-labelledby="sentence-building-narrative-heading">
+  <div class="reveal-item">
+    <span class="section-eyebrow">Sentence Building</span>
+    <h2 id="sentence-building-narrative-heading" class="section-title">뜻을 아는 문장에서, 순서를 결정하는 문장으로</h2>
+  </div>
+  <div class="teacher-card reveal-item">
+    <div class="section-desc">
+      <p>9월 후반에는 Unscramble 활동을 통해 문장을 다시 만드는 연습이 본격적으로 연결되었습니다.</p>
+<p>문장 유형을 바꾸어가며 주어진 단어를 영어 어순에 맞게 배열했습니다.</p>
+<p>여기에는 단순한 철자 쓰기 이상의 판단이 필요합니다. 주어가 어디에 오는지, 동사는 어디에 놓이는지, 전치사와 관사는 어떤 순서로 연결되는지를 생각해야 하기 때문입니다.</p>
+<p>성장의 의미: Reading에서 문장의 의미를 풀어보던 활동이 후반에는 문장의 구조를 다시 조립하는 활동으로 이어졌습니다. 이것이 김소윤의 9월 기록에서 확인되는 중요한 연결점입니다.</p>
+      <div class="teacher-quote"><h3>문장 배열 활동에서 만난 예문</h3><ul><li>It&#39;s sunny.</li>
+<li>My favorite sport is tennis.</li>
+<li>I ride my bike.</li>
+<li>I do my homework.</li>
+<li>I practice the piano.</li>
+<li>It&#39;s on the chair.</li>
+<li>It&#39;s under the desk.</li>
+<li>It&#39;s in the toy box.</li></ul></div>
+      
+    </div>
+  </div>
+</section>
+
+<section class="report-section" aria-labelledby="speaking-transfer-narrative-heading">
+  <div class="reveal-item">
+    <span class="section-eyebrow">Speaking Transfer</span>
+    <h2 id="speaking-transfer-narrative-heading" class="section-title">머리로 아는 문장을 입으로 옮기는 연습</h2>
+  </div>
+  <div class="teacher-card reveal-item">
+    <div class="section-desc">
+      <p>9월 3일에는 전날 학습한 활동지를 활용해 선생님이 한국어 문장을 말하면 김소윤 학생이 영어 문장을 만들어 말하는 활동을 진행했습니다.</p>
+<p>이날의 목적은 한 번 정답을 말하는 것이 아니었습니다. 한 문장을 여러 번 반복하면서 문장을 단어 하나씩 생각해서 꺼내기보다 하나의 덩어리처럼 발화하는 연습을 했습니다.</p>
+<p>이 기록은 9월 전체에서 중요한 의미를 가집니다. 김소윤의 학습이 Reading과 Writing에만 머물지 않고, 이해한 문장을 실제 발화로 옮기는 단계까지 연결될 필요가 있다는 점을 보여주기 때문입니다.</p>
+<p>다만 9월 기록만으로 말하기가 자동화되었다고 판단할 근거는 충분하지 않습니다. 오히려 이 경험을 10월에 지속적으로 확장해야 할 출발점으로 보는 것이 적절합니다.</p>
+      
+      
+    </div>
+  </div>
+</section>
+
+<section class="report-section" aria-labelledby="grammar-experience-narrative-heading">
+  <div class="reveal-item">
+    <span class="section-eyebrow">Grammar Experience</span>
+    <h2 id="grammar-experience-narrative-heading" class="section-title">문법 이름보다 먼저, 문장이 작동하는 모습을 경험하다</h2>
+  </div>
+  <div class="teacher-card reveal-item">
+    <div class="section-desc">
+      <p>9월 15일에는 현재완료 have/has + P.P.를 ‘과거에서 현재로 이어지는 시간’이라는 이미지로 접근했습니다.</p>
+<p>eat – ate – eaten을 비롯해 see – saw – seen, go – went – gone, take – took – taken, write – wrote – written 등의 동사 변화를 살펴보고 I have eaten an apple.과 같은 문장을 접했습니다.</p>
+<p>9월 16일에는 관계대명사 that을 명사에 붙이는 ‘설명 꼬리표’로 경험했습니다.</p>
+<p>banana + that is yellow에서 출발하여 a TV that has a big screen처럼 앞에 나온 대상을 뒤에서 더 구체적으로 설명하는 구조까지 확장했습니다.</p>
+<p>성장의 의미: 초3 김소윤에게 이 활동의 의미를 문법 항목의 ‘선행 학습’으로 과장할 필요는 없습니다. 중요한 것은 긴 문장도 일정한 원리로 만들어진다는 경험을 시각적 맥락 속에서 접했다는 점입니다.</p>
+      
+      
+    </div>
+  </div>
+</section>
+
+<section class="report-section" aria-labelledby="teacher-interpretation-teacher-heading">
+      <div class="teacher-card reveal-item">
+        <span class="section-eyebrow">Teacher Interpretation</span>
+        <h2 id="teacher-interpretation-teacher-heading" class="section-title">9월의 활동들이 하나의 방향으로 연결됩니다</h2>
+
+        <div class="section-desc" style="margin-bottom:0;">
+          <p>김소윤의 9월 기록을 개별 활동으로만 보면 Reading, 파닉스, 문법, 말하기, 문장 배열 등 여러 수업이 섞여 있습니다.</p>
+<p>그러나 한 달 전체로 보면 공통된 방향이 있습니다.</p>
+<p>영어를 보고 뜻을 알아내는 것에서 끝내지 않고, 이해한 내용을 다시 영어 구조로 만들어보는 경험을 늘렸다는 점입니다.</p>
+<p>Translation에서는 영어를 우리말 의미로 풀었습니다. Speaking에서는 그 방향을 뒤집어 한국어 의미에서 영어 문장을 꺼냈습니다. Unscramble에서는 흩어진 영어 단어를 문장으로 복원했고, that 활동에서는 완성된 명사에 새로운 설명을 덧붙여 문장을 확장했습니다.</p>
+<p>이러한 경험은 초등학교 3학년 김소윤에게 문장을 완성된 암기 단위로만 접하지 않고, 의미와 순서가 있는 구조로 경험하게 한다는 점에서 의미가 있습니다.</p>
+<p>동시에 아직 ‘스스로 자유롭게 문장을 생성하는 단계’까지 왔다고 단정해서는 안 됩니다. 9월 기록에는 활동지, 제시된 단어, 교사의 한국어 문장 등 발화를 돕는 단서가 있는 상황이 많았습니다.</p>
+<p>따라서 다음 단계에서는 이 단서를 조금씩 줄여가는 것이 중요합니다.</p>
+
+          <div class="teacher-quote">김소윤의 9월은 영어를 읽어 뜻을 알아내는 데서 끝나지 않고, 이해한 문장을 다시 배열하고 설명을 붙이고 입으로 꺼내보면서 ‘알고 있는 영어’를 여러 방향으로 사용하기 시작한 한 달이었습니다.</div>
+        </div>
+
+        <div class="teacher-sign">LE ENGLISH</div>
+      </div>
+    </section>
+
+    
+<section class="report-section" aria-labelledby="next-step-october-heading">
+      <div class="next-step-card reveal-item">
+        <span class="next-step-tag">October Next Step</span>
+        <h2 id="next-step-october-heading" class="next-step-title">보이는 단어를 조립하는 영어에서, 상황을 보고 꺼내는 영어로</h2>
+
+        <p class="next-step-desc">10월에는 9월에 경험한 문장 구조를 Speaking Output으로 연결합니다.
+
+9월에는 문장을 읽거나, 한국어 문장을 듣거나, 배열할 단어가 주어진 상태에서 영어를 구성하는 활동이 많았습니다. 10월에는 이러한 언어적 단서를 조금씩 줄이고 그림과 상황 자체를 보고 영어를 이해하고 말하는 활동으로 확장합니다.
+
+예를 들어 9월에 익힌 It&#39;s under the desk. 같은 위치 표현을 그대로 암송하는 데 그치지 않고, 새로운 그림을 보여주고 Is it under the chair?처럼 질문을 변형하여 외운 문장이 아니라 의미를 듣고 판단해 답하도록 연결합니다.
+
+또한 이미 익힌 문장 패턴의 핵심 어휘를 바꾸거나 주어와 상황을 변화시켜, ‘연습했던 문장’에서 ‘처음 만나는 비슷한 문장’으로 전이되는지를 확인합니다.
+
+10월의 방향은 새로운 문법 지식을 빠르게 늘리는 것보다, 9월에 쌓은 이해와 문장 구조를 실제로 입에서 사용할 수 있는 영어로 전환하는 것입니다.</p>
+
+        <div>
+          <span class="next-focus-pill">Speaking Output</span>
+        </div>
+      </div>
+    </section>
+
+    
+<section class="report-section" aria-labelledby="class-record-record-heading">
+      <div class="reveal-item">
+        <span class="section-eyebrow">Class Record</span>
+        <h2 id="class-record-record-heading" class="section-title">2026년 9월 수업 기록</h2>
+      </div>
+
+      <div class="record-metric-row reveal-item" id="class-record-counter-trigger">
+        <div class="record-metric-card">
+          <div class="metric-digits" data-target="16">16</div>
+          <div class="metric-title">예정 수업</div>
+        </div>
+
+        <div class="record-metric-card active-metric">
+          <div class="metric-digits" data-target="17">17</div>
+          <div class="metric-title">진행 수업</div>
+        </div>
+
+        <div class="record-metric-card">
+          <div class="metric-digits" data-target="1" data-prefix="+">+1</div>
+          <div class="metric-title">추가 진행</div>
+        </div>
+      </div>
+
+      <p class="record-statement reveal-item">예정된 16회 수업을 모두 진행했으며, 추가 수업 1회를 포함하여 총 17회 진행했습니다.</p>
+
+      </section>
+
+    
+<section class="report-section" aria-label="학습 기록">
+      <div class="archive-card reveal-item">
+        <span class="archive-eyebrow">Learning Archive</span>
+        <h2 class="archive-title">배움의 과정이 담긴<br>실제 학습 기록</h2>
+        <p class="archive-body">김소윤 학생의 9월 학습 기록물을<br>Learning Archive에서 확인하실 수 있습니다.</p>
+
+        <div class="archive-meta-tag">김소윤 · 2026년 9월</div>
+
+        <div>
+          <a href="https://drive.google.com/drive/folders/1hmpyOJObiaH80_HqF4ZLAElhJ3AMUMg9" target="_blank" rel="noopener noreferrer" class="archive-btn" aria-label="김소윤 학습 기록 보기 (새 창)">
+            <span>학습 기록 보기</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    
+<section class="report-section" aria-labelledby="parent-feedback-feedback-heading"><div class="feedback-form-container"><span class="section-eyebrow">Parent Feedback</span><h2 id="parent-feedback-feedback-heading" class="section-title">이번 학습보고서,<br>어떻게 읽으셨나요?</h2><p class="section-desc">보호자님의 짧은 의견은 더 읽기 쉽고 도움이 되는 학습보고서를 만드는 데 활용됩니다.</p><form data-feedback><input type="hidden" name="reportId" value="kim-soyun-2026-09"><input type="hidden" name="studentId" value="kim-soyun"><input type="hidden" name="month" value="2026-09"><fieldset class="fb-group"><legend class="fb-label">1. 이번 학습보고서는 읽기 편했나요?</legend><div class="feedback-options"><label class="choice-chip"><input type="radio" name="readabilityScore" value="5" required><span class="chip-visual">매우 그렇다</span></label><label class="choice-chip"><input type="radio" name="readabilityScore" value="4" required><span class="chip-visual">그렇다</span></label><label class="choice-chip"><input type="radio" name="readabilityScore" value="3" required><span class="chip-visual">보통이다</span></label><label class="choice-chip"><input type="radio" name="readabilityScore" value="2" required><span class="chip-visual">아니다</span></label><label class="choice-chip"><input type="radio" name="readabilityScore" value="1" required><span class="chip-visual">전혀 아니다</span></label></div></fieldset><fieldset class="fb-group"><legend class="fb-label">2. 자녀의 이번 달 학습 과정과 변화를 이해하는 데 도움이 되었나요?</legend><div class="feedback-options"><label class="choice-chip"><input type="radio" name="growthClarityScore" value="5" required><span class="chip-visual">매우 그렇다</span></label><label class="choice-chip"><input type="radio" name="growthClarityScore" value="4" required><span class="chip-visual">그렇다</span></label><label class="choice-chip"><input type="radio" name="growthClarityScore" value="3" required><span class="chip-visual">보통이다</span></label><label class="choice-chip"><input type="radio" name="growthClarityScore" value="2" required><span class="chip-visual">아니다</span></label><label class="choice-chip"><input type="radio" name="growthClarityScore" value="1" required><span class="chip-visual">전혀 아니다</span></label></div></fieldset><fieldset class="fb-group"><legend class="fb-label">3. 학습 내용과 선생님의 설명이 이해하기 쉽게 전달되었나요?</legend><div class="feedback-options"><label class="choice-chip"><input type="radio" name="explanationClarityScore" value="5" required><span class="chip-visual">매우 그렇다</span></label><label class="choice-chip"><input type="radio" name="explanationClarityScore" value="4" required><span class="chip-visual">그렇다</span></label><label class="choice-chip"><input type="radio" name="explanationClarityScore" value="3" required><span class="chip-visual">보통이다</span></label><label class="choice-chip"><input type="radio" name="explanationClarityScore" value="2" required><span class="chip-visual">아니다</span></label><label class="choice-chip"><input type="radio" name="explanationClarityScore" value="1" required><span class="chip-visual">전혀 아니다</span></label></div></fieldset><div class="fb-group"><label class="fb-label" for="parent-feedback-feedback-comment">학습보고서에 대한 의견이 있으시면 남겨주세요.</label><textarea id="parent-feedback-feedback-comment" name="comment" class="fb-textarea" placeholder="더 보고 싶은 내용이나 불편했던 점 등 자유롭게 적어주세요. (선택)"></textarea></div><p class="feedback-note">피드백 기능을 준비하고 있습니다. 입력하신 내용은 현재 서버로 전송되지 않습니다.</p><button type="submit" class="feedback-submit-btn" disabled><span>피드백 보내기</span><span aria-hidden="true">→</span></button><div class="fb-status-banner" role="status" aria-live="polite"></div><noscript><p class="feedback-note">피드백 양식은 JavaScript가 필요합니다. 보고서 본문은 그대로 읽으실 수 있습니다.</p></noscript></form></div></section>
+<footer class="brand-footer" aria-label="LE ENGLISH 브랜드">
+      <div class="footer-brand">LE ENGLISH</div>
+      <div class="footer-slogan">아는 영어를, 사용할 수 있는 영어로.</div>
+      <div class="footer-sub">Small Steps · Big English · Brighter Days</div>
+      <div class="footer-copyright">LE ENGLISH 2026 September Learning Report</div>
+    </footer>
+
+  </main><script id="report-runtime-data" type="application/json">{"reportId":"kim-soyun-2026-09","studentId":"kim-soyun","month":"2026-09","grammarExamples":[]}</script><script type="module">const questions = Object.freeze([
+  {key:'readabilityScore',text:'이번 학습보고서는 읽기 편했나요?'},
+  {key:'growthClarityScore',text:'자녀의 이번 달 학습 과정과 변화를 이해하는 데 도움이 되었나요?'},
+  {key:'explanationClarityScore',text:'학습 내용과 선생님의 설명이 이해하기 쉽게 전달되었나요?'}
+]);
+const options = Object.freeze([[5,'매우 그렇다'],[4,'그렇다'],[3,'보통이다'],[2,'아니다'],[1,'전혀 아니다']]);
+function createFeedbackPayload(identity, values, now = new Date()) {
+  const payload = {reportId:identity.reportId,studentId:identity.studentId,month:identity.month};
+  for (const {key} of questions) {
+    const score = Number(values[key]);
+    if (!Number.isInteger(score) || score < 1 || score > 5) throw new Error('각 문항의 응답을 선택해주세요.');
+    payload[key] = score;
+  }
+  payload.comment = typeof values.comment === 'string' ? values.comment : '';
+  payload.createdAt = now.toISOString();
+  return payload;
+}
+// Adapter boundary: deliberately no persistence, network call or success result.
+async function submitFeedback(payload) {
+  return {status:'unavailable',message:'피드백 기능을 준비하고 있습니다. 입력하신 내용은 현재 서버로 전송되지 않습니다.'};
+}
+
+const identity=JSON.parse(document.getElementById('report-runtime-data').textContent);
+const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
+// Static body is the primary rendering. Interactions only enhance it.
+for(const stage of document.querySelectorAll('.grammar-stage')){
+ const buttons=[...stage.querySelectorAll('[data-grammar-example]')];
+ for(const button of buttons)button.addEventListener('click',()=>{
+  const example=identity.grammarExamples[Number(button.dataset.grammarExample)-1];
+  if(!example)return;
+  for(const b of buttons){const selected=b===button;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected));}
+  stage.querySelector('.noun-box').textContent=example.noun;
+  stage.querySelector('.tag-box').textContent=example.tag;
+  stage.querySelector('.result-display-box').textContent=example.result;
+ });
+}
+for(const form of document.querySelectorAll('[data-feedback]')){
+ const button=form.querySelector('[type=submit]');button.disabled=false;
+ form.addEventListener('submit',async event=>{
+  event.preventDefault();if(!form.reportValidity())return;
+  const notice=form.querySelector('[role=status]');
+  try{
+   const values=Object.fromEntries(new FormData(form));
+   const payload=createFeedbackPayload(identity,values);
+   button.disabled=true;
+   const result=await submitFeedback(payload);
+   // This adapter returns unavailable, never a false success.
+   notice.textContent=result.message;
+  }catch(error){notice.textContent='피드백을 전송하지 못했습니다. 입력 내용은 유지됩니다.';}
+  finally{button.disabled=false;notice.classList.add('visible');notice.scrollIntoView({behavior:reduce.matches?'auto':'smooth',block:'nearest'});}
+ });
+}
+</script></body></html>
