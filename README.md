@@ -2,7 +2,22 @@
 
 SYSTEMIZE THE REPORT. DO NOT STANDARDIZE THE CHILD.
 
-Phase 2 implements only the Choi Yejun September 2026 golden sample. Input is a human-reviewed monthly narrative, evidence and student metadata. No journal ingestion, narrative generation, scoring, backend, authentication or dashboard is implemented.
+현재는 최예준 Golden Sample과 김소윤 Publishing Copy 검증을 보존한 Engine v1입니다. 신규 보고서의 화면 문구는 **승인된 Publishing Copy**에서 가져오며, Reviewed Monthly Narrative는 사실 확인용 Master로 분리합니다. Journal ingestion, 자동 원고 생성, scoring, backend, authentication, dashboard는 구현하지 않았습니다.
+
+## Quick Start — 새 학생 월간보고서 만들기
+
+1. 교사가 승인한 **짧은 Publishing Copy**와 사실 확인용 Master/Evidence, 학생 이름·학년·보고 월·Archive URL을 준비합니다.
+2. 승인 문구를 다시 집필하지 않고 사실 snapshot과 `reports/display/<reportId>.json`으로 구조화합니다. 학생에게 필요한 module만 선택하고 `modules[]` 순서를 정합니다.
+3. 새 revision 파일명으로 생성합니다. 아래 `<...>`를 실제 값으로 교체하고 입력/출력 **두 경로를 모두 명시**합니다.
+
+   ```bash
+   node scripts/render.mjs reports/display/<reportId>.json <reportId>-r<reportRevision>.html
+   ```
+
+4. Engine 회귀 검증과 신규 report 자체 검증을 실행하고, standalone HTML을 내려받아 실제 360/390/412px·키보드·접근성을 사람이 확인합니다.
+5. 원고 승인과 발행 승인은 별개입니다. Human QA 결과와 대상 revision을 전달한 뒤 **명시적 발행 승인 전 STOP**합니다.
+
+전체 입력 계약·역할·명령·검수 체크리스트는 [Production Workflow v1](docs/PRODUCTION_WORKFLOW.md)을 따릅니다. Node는 생성에 필요하고 standalone HTML은 브라우저에서 바로 열 수 있습니다. Python 검증은 lxml, 선택적 browser tests는 Playwright/Chromium이 필요합니다. 기존 샘플 tests가 새 학생 검증을 대신하지 않습니다. 무인자 render 명령은 Choi/index용이므로 신규 제작에 사용하지 않습니다.
 
 ## Minimal structure
 
