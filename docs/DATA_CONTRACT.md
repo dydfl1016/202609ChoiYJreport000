@@ -27,14 +27,14 @@ Daily Learning Journal → Reviewed Monthly Narrative → **human editorial sele
 
 These are separate artifacts:
 
-- `sources/*.reviewed.md`: complete internal Master Narrative, including interpretation, evidence, uncertainty and editorial recommendations. Markdown presentation is normalized; source meaning/content is not cut to the display budget.
-- Existing `reports/kim-soyun-2026-09.json`: immutable Phase3 structured source snapshot. It retains all prior paragraphs/evidence; it is not the newly edited display artifact.
+- `sources/*.reviewed.md`: synthetic public source fixtures only. Actual production Master Narratives preserve evidence and interpretation outside public reusable fixtures; display budgets do not justify shortening those private sources.
+- Existing `reports/student-a-2099-01.json`: synthetic test Master snapshot introduced in Phase 5C. It contains no actual student history and is separate from the concise display artifact.
 - `reports/display/*.json`: concise Parent Report Display Copy. `displayCopyVersion:1`, identity, schema/revision, heroStory, teacherInterpretation, nextStep and ordered modules. Prose is manually edited; there is no automatic generation/summarization/truncation.
 - `engine/editorial.mjs`: validates source provenance and prepares the renderer's existing report interface. It inherits student metadata, evidence, classRecord and archiveReference from the authoritative structured master. Those facts cannot be overridden by display JSON. Master prose is not a fallback for missing display copy.
 
-`editorial` contains status (`prepared-for-review` or `reviewed`), strategy (`manual-editorial-selection`), sourceReport/sourceNarrative repository-relative paths, SHA256 for both source files, sourceReportRevision, optional advisory readingTargetMinutes and omittedSections with reasons. Changed source hashes require explicit re-editing/review, never silent regeneration. Phase3.1 당시 Soyun copy는 prepared-for-review였다. 현재 revision 3은 사용자가 제공한 Final Publishing Copy를 입력으로 사용하며 reviewed 상태다. 이 상태는 HTML 발행 승인을 의미하지 않는다.
+`editorial` contains status (`prepared-for-review` or `reviewed`), strategy (`manual-editorial-selection`), sourceReport/sourceNarrative repository-relative paths, SHA256 for both source files, sourceReportRevision, optional advisory readingTargetMinutes and omittedSections with reasons. Changed source hashes require explicit re-editing/review, never silent regeneration. Historical Phase 3.1 used prepared-for-review; Phase 3.2 used reviewed Publishing Copy. Current public revision 3 is a synthetic test fixture: reviewed here indicates a checked test input, not real student copy or publication approval.
 
-Each display module has editorialRole, masterModuleRefs and optional evidenceRefs. `masterModuleRefs` links to stable blocks of the Phase3 source snapshot; evidenceRefs must resolve to its evidence. Renderer order remains exactly modules[] order. There is no mandatory universal order, student section count or ability score.
+Each display module has editorialRole, masterModuleRefs and optional evidenceRefs. `masterModuleRefs` links to stable blocks of its structured master snapshot; evidenceRefs must resolve to its evidence. Renderer order remains exactly modules[] order. There is no mandatory universal order, student section count or ability score.
 
 Added presentation types:
 
@@ -46,13 +46,13 @@ All strings are escaped by the existing renderer. Details are native HTML detail
 
 Generate new edited report:
 
-`node scripts/render.mjs reports/display/kim-soyun-2026-09.json kim-soyun-2026-09.html`
+`node scripts/render.mjs reports/display/student-a-2099-01.json student-a-2099-01.html`
 
 The legacy input route/default is retained for Golden Sample compatibility and historical tests. New editorial reports must use the display path explicitly. The renderer does not decide which source statements matter or evaluate whether copy is well edited; that is a human editorial review responsibility. No CMS, framework, backend, journal ingestion or automatic narrative generator is introduced.
 
 ## Publishing presentation revision (Phase 3.2)
 
-Soyun reportRevision 3 uses the user-provided Final Publishing Copy as primary display authority; editorial.status is reviewed for that supplied input. `editorial.publishingCopy` records path, sha256 and authority. The byte-exact supplied input is retained separately from the full Master. Provenance hash is checked by the publishing static test; the existing runtime layer still validates Master identity/revision/hashes.
+The production convention uses approved Publishing Copy as primary display authority. Current Student A revision 3 uses clearly labelled synthetic Publishing Copy instead of private supplied input; reviewed is a fixture state, not publication approval. `editorial.publishingCopy` records path, sha256 and synthetic authority. The synthetic source is retained separately from the synthetic Master. Provenance hash is checked by the publishing static test; the existing runtime layer still validates Master identity/revision/hashes.
 
 Editorial-learning adds panels[{title,formula,text,examples[]}] and takeaways[string]; authors provide empty arrays when unused. Editorial-next-step now uses transferFlow[{label,example}], supportingCopy, goal and closing. Hero adds term. These are generic publishing presentation slots, not student conditions. No renderer/core rewrite or automatic editorial automation. Historical Phase3.1 validation describes its earlier output; the current report is documented in PUBLISHING_COPY_VALIDATION.md.
 
@@ -66,3 +66,7 @@ Editorial-learning adds panels[{title,formula,text,examples[]}] and takeaways[st
 - 월간 Core Story는 내부 anchor로 보존할 수 있고 모든 학생에게 별도 Overview/동일 순서를 강제하지 않는다.
 - 현행 runtime/JSON schema/version 필드는 변경하지 않았다. Phase4는 운영 문서 보완이며 schema migration이 아니다.
 - 기존 sample tests와 신규 report 검증을 구분한다. Copy approval, Human QA approval, Publish approval을 각각 기록하며 editorial.status만으로 발행하지 않는다.
+
+## Public fixture boundary (Phase 5C)
+
+Student A sources are reduced synthetic validation documents, not actual student records or production-approved copy. Identity/month/counts and all narrative are synthetic; evidence dates and Archive URL are null. Golden Sample is an explicit temporary privacy exception. Private production sources must not be committed as reusable public fixtures. Source hashes are regenerated for synthetic content; provenance checks remain unchanged.

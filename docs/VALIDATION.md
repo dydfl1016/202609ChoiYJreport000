@@ -27,9 +27,9 @@ CSS specifies Feedback 48px targets and grammar buttons 44px targets, but comput
 
 No production deploy or merge. Before a later release, run browser QA, inspect actual typography and compare golden screenshots, then verify Drive access for the intended parent.
 
-## Consolidation preparation — Phase 5B
+## Historical consolidation preparation — Phase 5B
 
-Base: `feat/report-editorial-layer@f37d329`; review branch: `release/monthly-report-engine-v1`. Existing history is inherited without cherry-picking or rewriting. Canonical validation output remains `kim-soyun-2026-09.html`; the identical publishing-v3 alias was removed. No Engine Core, Data Contract, Golden Sample, student JSON, Master Source or canonical report content was changed.
+Base: `feat/report-editorial-layer@f37d329`; review branch: `release/monthly-report-engine-v1`. Existing history is inherited without cherry-picking or rewriting. At Phase 5B the original second-student canonical HTML remained and its identical alias was removed. Phase 5C now replaces that canonical with a synthetic sample. No Engine Core, Data Contract, Golden Sample, student JSON, Master Source or canonical report content was changed.
 
 Re-run on 2026-10-02: `node tests/engine.test.mjs`, `python tests/parity.py`, `node tests/second-student.test.mjs`, `node tests/editorial.test.mjs`, `python tests/editorial-static.py` all passed. The alias equality assertion was removed; canonical renderer-to-file equality remains tested by `editorial.test.mjs`.
 
@@ -38,3 +38,17 @@ Both `node tests/browser.cjs` and `node tests/editorial-browser.cjs` were retrie
 Pages: repository metadata confirms Pages enabled. A successful GitHub-managed `pages build and deployment` run has event `dynamic`, path `dynamic/pages/pages-build-deployment`, and branch `main@f380a13`. The latest source tree contains no tracked `.github` workflow. The connector rejected the `/pages` settings GET as unsupported, so configured source branch/path (`/` or `/docs`), build type and future automatic deployment trigger are not confirmed. Do not interpret that connector limitation as a repository permission failure. No deployment setting was changed. Treat main integration as potentially publishing until the settings are verified.
 
 Privacy policy remains undecided: real validation fixtures are preserved for approval. The consolidation Draft PR compares keeping actual fixtures with anonymized public fixtures; neither policy has been silently selected. Existing PR #1/#2 remain Open/Draft and untouched. Merge, deployment, auto-merge and Ready for Review are not approved.
+
+## Privacy-safe fixture replacement — Phase 5C
+
+Scope: current `release/monthly-report-engine-v1` tree / Draft PR #3 only. Actual second-student name/ID, private Drive folder, dated lesson observations, internal teacher interpretation, long Reviewed Narrative and original Publishing Copy/prompts were found across JSON/source/HTML/docs. These actual second-student files are removed from candidate HEAD and replaced by Student A synthetic fixtures at `reports/student-a-2099-01.json`, `reports/display/student-a-2099-01.json`, `sources/student-a-2099-01.reviewed.md`, `sources/student-a-2099-01.publishing.txt`, `student-a-2099-01.html`.
+
+TEST FIXTURE / NOT A REAL STUDENT REPORT is visible in sources and HTML. Fictional month 2099-01 and grade TEST LEVEL avoid real metadata. Counts 4/5/1 are synthetic. Twelve evidence records have null dates and SYNTHETIC_TEST_FIXTURE sourceType, with FACT / OBSERVATION / INTERPRETATION coverage. All prose is synthetic, not merely name-replaced private narrative. Generic English examples remain instructional samples, not real student utterances. Archive URL is null; common missing-archive placeholder is rendered. No archive resolver or Engine Core changes.
+
+Preserved coverage: distinct second-student composition, source/display separation, ordering/reordering/omission, four-step Hero flow, eight sentence examples, two grammar panels, three-step transfer board, compact phonics callout, source hashes/provenance/fact guards, injection escaping, common Feedback and Golden parity. Synthetic Master snapshot rendering hash was explicitly regenerated; canonical display equality remains tested. Existing Archive override/fallback/unsafe URL tests remain.
+
+Automated tests re-run and passed on 2026-10-02: engine.test.mjs, parity.py, second-student.test.mjs, editorial.test.mjs, editorial-static.py. Browser/mobile/accessibility status remains unavailable/pending, not passed.
+
+Golden privacy exception: golden/main.html, reports/choi-yejun-2026-09.json, index.html still expose the original displayName/grade/month, learning examples/interpretation, identifier and real Drive folder. Both HTMLs contain one Drive link. They are unchanged to preserve original golden text/link/byte parity. Anonymizing them in place would intentionally break that original baseline; a separate approved migration needs preserved original reference and a new public baseline/test expectations. This may be deferred beyond v1, but requires an explicit privacy/publication decision. The candidate is not fully privacy-clean.
+
+Limits: existing main, previous branches, commits and old PR bodies remain unchanged/public under the user's safety constraints. HEAD cleanup is not Git-history erasure. Original private sources are not backed up into a new public file. No claim is made that current repository history or Golden assets are anonymous. No merge/deploy, existing PR close, history rewrite or force push.

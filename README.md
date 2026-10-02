@@ -2,7 +2,7 @@
 
 SYSTEMIZE THE REPORT. DO NOT STANDARDIZE THE CHILD.
 
-현재는 최예준 Golden Sample과 김소윤 Publishing Copy 검증을 보존한 Engine v1입니다. 신규 보고서의 화면 문구는 **승인된 Publishing Copy**에서 가져오며, Reviewed Monthly Narrative는 사실 확인용 Master로 분리합니다. Journal ingestion, 자동 원고 생성, scoring, backend, authentication, dashboard는 구현하지 않았습니다.
+현재는 최예준 Golden Sample과 Student A synthetic Publishing Copy 검증을 포함한 Engine v1입니다. 신규 보고서의 화면 문구는 **승인된 Publishing Copy**에서 가져오며, Reviewed Monthly Narrative는 사실 확인용 Master로 분리합니다. Journal ingestion, 자동 원고 생성, scoring, backend, authentication, dashboard는 구현하지 않았습니다.
 
 ## Quick Start — 새 학생 월간보고서 만들기
 
@@ -49,6 +49,14 @@ Module array order controls display order. Omitting a module creates no placehol
 
 PR #1 remains untouched and unmerged. This separate branch implements the approved feedback direction as an Engine component. Engine v1 functionally supersedes PR #1. PR #2 is the Phase 2 snapshot and lacks the four later validation/editorial/workflow commits. Both existing Draft PRs remain unchanged; the consolidation Draft PR is the current review candidate, with merge/deploy not approved.
 
-### 김소윤 최종 Publishing Copy (Phase 3.2)
+### Synthetic Second Student Fixture (Phase 5C)
 
-Download/open `kim-soyun-2026-09.html`, the single canonical validation standalone for Publishing Copy revision 3. The identical `kim-soyun-2026-09-publishing-v3.html` alias was removed during consolidation. This is a validation artifact, not an approved production publication. Generate from `reports/display/kim-soyun-2026-09.json`, not the long Master JSON. See `docs/PUBLISHING_COPY_VALIDATION.md` for scope and browser QA limitations. No production deployment.
+Download/open `student-a-2099-01.html`. **TEST FIXTURE / NOT A REAL STUDENT REPORT**: Student A, fictional 2099-01, synthetic Master/Publishing Copy/Evidence and non-production Archive placeholder. This preserves second-student composition and display regression coverage without private learning records. Generate from `reports/display/student-a-2099-01.json`, not the Master JSON.
+
+## Public test fixture policy
+
+Public repository validation fixtures must not contain real student names, private learning archives, or private narrative sources. Real content belongs to reviewed report production input, not reusable public test fixtures. Synthetic samples must be clearly labelled and must not be presented as student assessment or production approval.
+
+**Temporary Golden exception:** `golden/main.html`, `reports/choi-yejun-2026-09.json` and `index.html` still contain the original name, grade, learning narrative and Drive folder link. These files remain byte-identical to preserve the existing Golden parity contract; the repository is not fully anonymized. A separate approved Golden baseline migration/publication decision is required before treating this candidate as privacy-clean.
+
+Phase 5C removes the actual second-student files from this candidate HEAD only. Existing main, old branches, commits and PR history remain public and unchanged. This is not historical data erasure; no rewrite or force push was performed.

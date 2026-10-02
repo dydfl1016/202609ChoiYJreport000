@@ -123,7 +123,7 @@ node tests/editorial.test.mjs
 python tests/editorial-static.py
 ```
 
-Python tests에는 lxml이 필요하다. 이 tests는 **기존 Choi/Soyun 회귀 검증**이며 새 학생의 Copy 정확성을 보증하지 않는다.
+Python tests에는 lxml이 필요하다. 이 tests는 **Golden / synthetic Student A 회귀 검증**이며 새 학생의 Copy 정확성을 보증하지 않는다.
 
 새 report input/output 재현성은 파일을 덮어쓰지 않고 다음처럼 검사할 수 있다:
 
@@ -235,7 +235,7 @@ Copy version / reportRevision: ____
 
 ## 9. 현재 Engine 감사와 한계
 
-확인 범위: 김소윤 approved Copy → Display JSON → modules[] → prepareDisplayReport → renderReport의 실제 경로가 있다. 신규 학생을 만들지 않고 기존 자동 테스트와 in-memory 재생성 비교로 검증했다. standalone HTML은 inline CSS/JS와 정적 본문을 가지며 local asset 의존성이 없다. 사실·의미·화면의 사람 검토는 여전히 필요하다.
+역사적 Phase 4 확인 범위: 당시 승인 원고 → Display JSON → modules[] → prepareDisplayReport → renderReport의 실제 경로가 있다. 신규 학생을 만들지 않고 기존 자동 테스트와 in-memory 재생성 비교로 검증했다. standalone HTML은 inline CSS/JS와 정적 본문을 가지며 local asset 의존성이 없다. 사실·의미·화면의 사람 검토는 여전히 필요하다.
 
 Architecture weakness:
 
@@ -245,7 +245,7 @@ Architecture weakness:
 4. editorial.status는 승인 증명의 인증이 아니다. prepared 상태도 preview 렌더링이 가능하다. Human QA와 명시 발행 승인 게이트를 운영에서 분리한다.
 5. Publishing Copy hash는 기록되지만 runtime 자동 대조는 없다. 제작 시 확인과 현재 샘플 테스트의 책임이다. 자동 의미 검증도 없다.
 6. grammar-experience 전용 template은 관계대명사 상호작용/global grammarExamples에 의존한다. 다른 영역은 generic presentation으로 표현할 수 있으나 미구현 전용 interaction이 있다고 주장하지 않는다.
-7. 모든 신규 report를 검증하는 범용 browser/HTML QA script는 없다. 기존 테스트 일부는 최예준/김소윤에 특화되어 신규 report 자체 검증이 필요하다.
+7. 모든 신규 report를 검증하는 범용 browser/HTML QA script는 없다. 기존 테스트 일부는 최예준/Student A에 특화되어 신규 report 자체 검증이 필요하다.
 8. 현행 CLI 무인자 default는 Choi → index다. 이번에는 명시적 경로를 운영 규칙으로 정하고 CLI/core는 바꾸지 않는다.
 
 Phase 4에서 이를 대규모 코드 수정으로 해결하지 않고 보고한다. 개선 필요성은 실제 여러 학생의 운영 경험으로 판단한다.
@@ -269,3 +269,7 @@ Phase 4에서 이를 대규모 코드 수정으로 해결하지 않고 보고한
 7. 구체적인 발행 승인 시점. Feedback backend/저장소/집계는 아직 결정하지 않는다.
 
 Workflow 확정은 Publish를 시작하는 지시가 아니다. Phase 4 완료 뒤 STOP하고 다음 구체적 제작/발행 지시를 기다린다.
+
+## Phase 5C public fixture policy
+
+Current Student A inputs are labelled synthetic fixtures, not actual student monthly narratives or production approvals. Real reviewed sources and Publishing Copy are production inputs and must not become reusable public test fixtures. Golden Sample currently remains a documented privacy exception pending a separate baseline migration decision. Previous branches/commits are unchanged; current-tree cleanup does not erase historical exposure.
