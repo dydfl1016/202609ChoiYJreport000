@@ -885,7 +885,44 @@
     }
 
     .fb-group {
-      margin-bottom: 22px;
+      margin: 0 0 22px;
+      padding: 0;
+      border: 0;
+      min-width: 0;
+    }
+
+    #feedbackQuestions .selectable-chip-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 8px;
+    }
+
+    #feedbackQuestions .choice-chip {
+      position: relative;
+      min-width: 0;
+    }
+
+    #feedbackQuestions .chip-visual {
+      width: 100%;
+      min-height: 48px;
+      padding: 10px 12px;
+      text-align: center;
+    }
+
+    #feedbackQuestions input:checked + .chip-visual {
+      box-shadow: inset 0 0 0 1px var(--color-accent);
+    }
+
+    @media (min-width: 600px) {
+      #feedbackQuestions .selectable-chip-grid {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+      }
+    }
+
+    .feedback-submit-btn:focus-visible,
+    .fb-textarea:focus-visible {
+      outline: 2px solid var(--color-accent);
+      outline-offset: 3px;
     }
 
     .fb-label {
@@ -1459,83 +1496,22 @@
     <section class="report-section" aria-labelledby="feedback-heading">
       <div class="feedback-form-container reveal-item">
         <span class="section-eyebrow">Parent Feedback</span>
-        <h2 id="feedback-heading" class="section-title">이번 달 예준이의 학습,<br>어떻게 보셨나요?</h2>
+        <h2 id="feedback-heading" class="section-title">이번 학습보고서,<br>어떻게 읽으셨나요?</h2>
         <p class="section-desc">
-          보호자님의 짧은 피드백은 다음 달 수업 방향을 세우는 데 소중한 참고 자료가 됩니다.
+          보호자님의 짧은 의견은 더 읽기 쉽고 도움이 되는 학습보고서를 만드는 데 활용됩니다.
         </p>
 
         <form id="parentFeedbackForm" onsubmit="handleFeedbackSubmit(event)">
-          <!-- Hidden Identifiers for Future API -->
+          <!-- Only report identity varies; questions and score schema are shared. -->
+          <input type="hidden" name="reportId" value="choi-yejun-2026-09">
           <input type="hidden" name="studentId" value="choi-yejun">
-          <input type="hidden" name="studentName" value="최예준">
-          <input type="hidden" name="reportMonth" value="2026-09">
+          <input type="hidden" name="month" value="2026-09">
 
-          <!-- Question 1 -->
-          <div class="fb-group">
-            <label class="fb-label">1. 이번 달 보고서에서 가장 눈에 들어온 변화는 무엇인가요?</label>
-            <div class="selectable-chip-grid">
-              <label class="choice-chip">
-                <input type="radio" name="highlight" value="문장 이해" required>
-                <span class="chip-visual">문장 이해</span>
-              </label>
-              <label class="choice-chip">
-                <input type="radio" name="highlight" value="어휘">
-                <span class="chip-visual">어휘</span>
-              </label>
-              <label class="choice-chip">
-                <input type="radio" name="highlight" value="문장 만들기">
-                <span class="chip-visual">문장 만들기</span>
-              </label>
-              <label class="choice-chip">
-                <input type="radio" name="highlight" value="문법 활용">
-                <span class="chip-visual">문법 활용</span>
-              </label>
-              <label class="choice-chip">
-                <input type="radio" name="highlight" value="학습 태도">
-                <span class="chip-visual">학습 태도</span>
-              </label>
-              <label class="choice-chip">
-                <input type="radio" name="highlight" value="기타">
-                <span class="chip-visual">기타</span>
-              </label>
-            </div>
-          </div>
+          <div id="feedbackQuestions"></div>
 
-          <!-- Question 2 -->
           <div class="fb-group">
-            <label class="fb-label">2. 10월에 특히 보고 싶은 변화는 무엇인가요?</label>
-            <div class="selectable-chip-grid">
-              <label class="choice-chip">
-                <input type="radio" name="nextFocus" value="말하기 자신감" required>
-                <span class="chip-visual">말하기 자신감</span>
-              </label>
-              <label class="choice-chip">
-                <input type="radio" name="nextFocus" value="어휘 인출">
-                <span class="chip-visual">어휘 인출</span>
-              </label>
-              <label class="choice-chip">
-                <input type="radio" name="nextFocus" value="문장 만들기">
-                <span class="chip-visual">문장 만들기</span>
-              </label>
-              <label class="choice-chip">
-                <input type="radio" name="nextFocus" value="읽기 이해">
-                <span class="chip-visual">읽기 이해</span>
-              </label>
-              <label class="choice-chip">
-                <input type="radio" name="nextFocus" value="스스로 해결하기">
-                <span class="chip-visual">스스로 해결하기</span>
-              </label>
-              <label class="choice-chip">
-                <input type="radio" name="nextFocus" value="기타">
-                <span class="chip-visual">기타</span>
-              </label>
-            </div>
-          </div>
-
-          <!-- Question 3 -->
-          <div class="fb-group">
-            <label for="parentMessageInput" class="fb-label">3. 선생님께 남기실 말씀이 있나요?</label>
-            <textarea id="parentMessageInput" name="parentMessage" class="fb-textarea" placeholder="선택 사항입니다."></textarea>
+            <label for="parentMessageInput" class="fb-label">학습보고서에 대한 의견이 있으시면 남겨주세요.</label>
+            <textarea id="parentMessageInput" name="comment" class="fb-textarea" placeholder="더 보고 싶은 내용이나 불편했던 점 등 자유롭게 적어주세요. (선택)"></textarea>
           </div>
 
           <button type="submit" class="feedback-submit-btn">
@@ -1668,6 +1644,34 @@
       resultEl.textContent = selected.result;
     }
 
+    // Shared UX feedback contract for every student/month.
+    // Native radio groups expose checked state and support Tab/arrow/Space keys.
+    const PARENT_FEEDBACK_QUESTIONS = Object.freeze([
+      { key: 'readabilityScore', text: '이번 학습보고서는 읽기 편했나요?' },
+      { key: 'growthClarityScore', text: '자녀의 이번 달 학습 과정과 변화를 이해하는 데 도움이 되었나요?' },
+      { key: 'explanationClarityScore', text: '학습 내용과 선생님의 설명이 이해하기 쉽게 전달되었나요?' }
+    ]);
+    const PARENT_FEEDBACK_OPTIONS = Object.freeze([
+      { score: 5, label: '매우 그렇다' },
+      { score: 4, label: '그렇다' },
+      { score: 3, label: '보통이다' },
+      { score: 2, label: '아니다' },
+      { score: 1, label: '전혀 아니다' }
+    ]);
+
+    document.getElementById('feedbackQuestions').innerHTML =
+      PARENT_FEEDBACK_QUESTIONS.map(({ key, text }, index) => `
+        <fieldset class="fb-group">
+          <legend class="fb-label" id="${key}-legend">${index + 1}. ${text}</legend>
+          <div class="selectable-chip-grid" role="radiogroup" aria-labelledby="${key}-legend" aria-required="true">
+            ${PARENT_FEEDBACK_OPTIONS.map(({ score, label }) => `
+              <label class="choice-chip">
+                <input type="radio" name="${key}" value="${score}" required>
+                <span class="chip-visual">${label}</span>
+              </label>`).join('')}
+          </div>
+        </fieldset>`).join('');
+
     // 5. Parent Feedback Submission Handler (Form Structure Prepared for Backend)
     function handleFeedbackSubmit(event) {
       event.preventDefault();
@@ -1677,12 +1681,14 @@
 
       // Structured data payload ready for future API endpoint
       const feedbackPayload = {
+        reportId: formData.get('reportId'),
         studentId: formData.get('studentId'),
-        studentName: formData.get('studentName'),
-        reportMonth: formData.get('reportMonth'),
-        highlight: formData.get('highlight'),
-        nextFocus: formData.get('nextFocus'),
-        parentMessage: formData.get('parentMessage') || ''
+        month: formData.get('month'),
+        readabilityScore: Number(formData.get('readabilityScore')),
+        growthClarityScore: Number(formData.get('growthClarityScore')),
+        explanationClarityScore: Number(formData.get('explanationClarityScore')),
+        comment: formData.get('comment') || '',
+        createdAt: new Date().toISOString()
       };
 
       // TODO: Connect Parent Feedback API endpoint here.
