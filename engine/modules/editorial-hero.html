@@ -1,0 +1,9 @@
+<header class="report-hero editorial-hero">
+  <div class="hero-meta"><span class="hero-badge-brand">LE ENGLISH</span><span class="hero-badge-student">{{student.displayName}} 학생 · {{student.grade}}</span><span class="hero-badge-term">{{month}}</span></div>
+  <h1 class="hero-headline">{{content.title}}</h1>
+  <p class="editorial-subtitle">{{content.subtitle}}</p>
+  <div class="hero-narrative">{{#each content.paragraphs}}<p>{{rich:item}}</p>{{/each}}</div>
+  <ol class="editorial-flow" aria-label="이번 달 학습의 연결">
+    {{#each content.flow}}<li><strong>{{item.keyword}}</strong><span>{{item.label}}</span></li>{{/each}}
+  </ol>
+</header>

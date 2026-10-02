@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
 import {readFile} from 'node:fs/promises';
 import {renderReport,validateReport,archiveUrl} from '../engine/renderer.mjs';
 import {createFeedbackPayload,submitFeedback} from '../engine/feedback.mjs';
@@ -6,7 +7,7 @@ const json=async path=>JSON.parse(await readFile(path,'utf8'));
 const soyun=await json('reports/kim-soyun-2026-09.json');
 const choi=await json('reports/choi-yejun-2026-09.json');
 const html=await renderReport(soyun);
-assert.equal(html,await readFile('kim-soyun-2026-09.html','utf8'));
+assert.equal(createHash('sha256').update(html).digest('hex'),'d67ff2961862f9f9fbe3c5fb7e7fe7924a1288ca8bfc155e7fe363f2b97269fd','Phase3 master rendering stays unchanged; current standalone uses editorial display copy');
 assert.equal(await renderReport(choi),await readFile('index.html','utf8'),'Choi byte parity');
 assert.equal(archiveUrl(soyun),'https://drive.google.com/drive/folders/1hmpyOJObiaH80_HqF4ZLAElhJ3AMUMg9');
 const expected=['hero','monthly-overview','reading-translation','sentence-building','speaking-transfer','grammar-experience','teacher-interpretation','next-step','class-record','learning-archive','parent-feedback','brand-ending'];

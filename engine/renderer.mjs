@@ -4,7 +4,7 @@ const moduleDirectory = new URL('./modules/',import.meta.url);
 // Extension point: register a template and its data requirements, without changing composition.
 export const moduleRegistry = Object.freeze(Object.fromEntries([
  'hero','overview','learning-continuum','reading-vocabulary','sentence-building',
- 'learning-narrative','grammar-experience','teacher-interpretation','next-step','class-record','learning-archive','brand-ending'
+ 'editorial-hero','editorial-learning','editorial-next-step','learning-narrative','grammar-experience','teacher-interpretation','next-step','class-record','learning-archive','brand-ending'
 ].map(type => [type,{template:new URL(`${type}.html`,moduleDirectory)}])));
 const escape = value => String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 const get = (object,path) => path.split('.').reduce((v,k)=>v?.[k],object);
@@ -96,7 +96,8 @@ export async function renderReport(data){
   }
   parts.push(scopedIds(markup,module.id));
  }
- const css=await readFile(new URL('./report.css',import.meta.url),'utf8');
+ let css=await readFile(new URL('./report.css',import.meta.url),'utf8');
+ if(data.modules.some(m=>m.type.startsWith('editorial-')))css+='\n'+await readFile(new URL('./editorial.css',import.meta.url),'utf8');
  const identity={reportId:data.reportId,studentId:data.studentId,month:data.month,grammarExamples:data.grammarExamples??[]};
  const feedbackSource=(await readFile(new URL('./feedback.mjs',import.meta.url),'utf8')).replace(/export /g,'');
  const interactionSource=(await readFile(new URL('./interactions.mjs',import.meta.url),'utf8')).replace(/^import[^\n]+\n/,'');
