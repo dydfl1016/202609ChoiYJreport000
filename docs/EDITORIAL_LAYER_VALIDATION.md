@@ -1,5 +1,7 @@
 # PHASE 3.1 — Report Editorial Layer Validation
 
+> Historical validation record — Phase 3.1 at `87067e7`. Prepared-for-review copy, disclosure references and density measurements describe that phase; they are not claims about the later revision 3 output. The canonical HTML now uses the approved Publishing Copy recorded in `PUBLISHING_COPY_VALIDATION.md`. Browser/mobile/accessibility Human QA remains pending.
+
 ## Result and scope
 
 김소윤's edited Parent Report is `kim-soyun-2026-09.html`, generated from `reports/display/kim-soyun-2026-09.json`. Download/open directly in a browser; no deployment or server is necessary. The internal source is separate from parent presentation. Display copy is prepared for review; no claim of user editorial approval or measured 2–4 minute reading time.

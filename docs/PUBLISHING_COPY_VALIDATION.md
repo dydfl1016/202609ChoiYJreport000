@@ -1,12 +1,14 @@
 # PHASE 3.2 — 김소윤 Publishing Copy 검증
 
+> Validation record — Phase 3.2 at `713e3bc`, with consolidation path updates. `kim-soyun-2026-09.html` is the single canonical revision 3 validation HTML. Publishing Copy approval does not constitute publication approval. Browser/mobile/accessibility Human QA remains pending.
+
 ## A. 산출물
 
 - 최신 출력: `kim-soyun-2026-09.html`
-- 새 파일명: `kim-soyun-2026-09-publishing-v3.html` — 이전 다운로드와 혼동을 피하는 동일 내용의 standalone HTML
+- Consolidation: 동일 blob의 `kim-soyun-2026-09-publishing-v3.html` alias 제거; canonical 출력 1개 유지
 - Display Data: `reports/display/kim-soyun-2026-09.json`, reportRevision 3
 - 최종 발행 원고/지시 보존: `sources/kim-soyun-2026-09.publishing.txt` (사용자 첨부 원본 바이트 그대로)
-- 생성: `node scripts/render.mjs reports/display/kim-soyun-2026-09.json kim-soyun-2026-09-publishing-v3.html`
+- 생성: `node scripts/render.mjs reports/display/kim-soyun-2026-09.json kim-soyun-2026-09.html`
 
 사용자가 제공한 Final Publishing Copy가 화면의 기준이다. 기존 Master JSON과 Reviewed Narrative는 변경하지 않았다. 원고를 늘리거나 삭제된 장문을 복원하지 않았다. Publishing 입력의 출처와 SHA256은 editorial metadata에 기록하고 테스트에서 확인한다. 기존 runtime editorial layer의 Master 해시 검증은 그대로 유지한다.
 
@@ -46,7 +48,7 @@ Renderer와 composition/escaping, Editorial Layer, 공통 brand tokens/CSS, Teac
 
 실제 Playwright browser test를 시도했으나 Chromium 실행 파일이 없어 시작하지 못했다. 실제 viewport overflow, title/chip wrapping, visual rhythm, touch target 실측, keyboard/focus, 200% text zoom, screen reader, JS-disabled 화면 및 reduced-motion 렌더링은 **미검증**이다. CSS/HTML 구조 점검을 실제 화면 검증 통과로 표현하지 않는다. lxml 점검은 전체 HTML conformance validation이 아니다.
 
-실제 브라우저 확인: 새 `publishing-v3.html`을 다운로드하여 Chrome/Edge/Safari에서 열고, 개발자 도구에서 360/390/412px을 확인한다. 공개 preview 배포는 하지 않았다.
+실제 브라우저 확인: canonical `kim-soyun-2026-09.html`을 다운로드하여 Chrome/Edge/Safari에서 열고, 개발자 도구에서 360/390/412px을 확인한다. 공개 preview 배포는 하지 않았다.
 
 ## G. Golden Sample 영향
 

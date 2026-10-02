@@ -1,5 +1,7 @@
 # PHASE 3 — 김소윤 2026-09 Second Student Validation
 
+> Historical validation record — Phase 3 at `0c6dcf4`, using the long Master JSON. The current canonical HTML uses the later Publishing Copy display JSON. Do not run the historical Master rebuild command against the canonical HTML; use a separate output file for historical reproduction. See `PUBLISHING_COPY_VALIDATION.md` and `PRODUCTION_WORKFLOW.md`. Browser/mobile/accessibility Human QA remains pending.
+
 ## A. Data / output
 
 - Data: `reports/kim-soyun-2026-09.json`

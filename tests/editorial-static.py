@@ -24,8 +24,8 @@ for module in display['modules']:
 assert '김소윤의 9월 기록을 개별 활동으로만 보면' not in body
 assert 'take – took – taken' not in body and 'write – wrote – written' not in body
 assert not re.search(r'\d+\s*점|\d+%|Lexile|ranking|radar',body)
-assert Path('kim-soyun-2026-09.html').read_bytes()==Path('kim-soyun-2026-09-publishing-v3.html').read_bytes()
+# Canonical standalone freshness is checked by tests/editorial.test.mjs; duplicate alias removed.
 source=Path('sources/kim-soyun-2026-09.publishing.txt').read_bytes()
 assert hashlib.sha256(source).hexdigest()==display['editorial']['publishingCopy']['sha256']
-print('PASS: Publishing Copy, four-step flow, topics/eight examples, two grammar cards, three-step transfer, common Feedback/Archive, IDs/ARIA, alias reproducibility')
+print('PASS: Publishing Copy, four-step flow, topics/eight examples, two grammar cards, three-step transfer, common Feedback/Archive, IDs/ARIA, canonical standalone')
 print('Main characters excluding whitespace:',len(re.sub(r'\s','',body)))
