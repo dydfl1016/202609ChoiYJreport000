@@ -1,0 +1,28 @@
+<section class="report-section" aria-labelledby="record-heading">
+      <div class="reveal-item">
+        <span class="section-eyebrow">{{content.section_eyebrow_1}}</span>
+        <h2 id="record-heading" class="section-title">{{content.section_title_1}}</h2>
+      </div>
+
+      <div class="record-metric-row reveal-item" id="counter-trigger">
+        <div class="record-metric-card">
+          <div class="metric-digits" data-target="{{classRecord.scheduled}}">{{content.metric_digits_1}}</div>
+          <div class="metric-title">{{content.metric_title_1}}</div>
+        </div>
+
+        <div class="record-metric-card active-metric">
+          <div class="metric-digits" data-target="{{classRecord.actual}}">{{content.metric_digits_2}}</div>
+          <div class="metric-title">{{content.metric_title_2}}</div>
+        </div>
+
+        <div class="record-metric-card">
+          <div class="metric-digits" data-target="{{classRecord.additional}}" data-prefix="+">{{content.metric_digits_3}}</div>
+          <div class="metric-title">{{content.metric_title_3}}</div>
+        </div>
+      </div>
+
+      <p class="record-statement reveal-item">{{content.record_statement_1}}</p>
+
+      </section>
+
+    

@@ -1,0 +1,16 @@
+<section class="report-section" aria-labelledby="teacher-heading">
+      <div class="teacher-card reveal-item">
+        <span class="section-eyebrow">{{content.section_eyebrow_1}}</span>
+        <h2 id="teacher-heading" class="section-title">{{content.section_title_1}}</h2>
+
+        <div class="section-desc" style="margin-bottom:0;">
+          {{#each content.paragraphs}}<p>{{rich:item}}</p>{{/each}}
+
+          <div class="teacher-quote">{{content.teacher_quote_1}}</div>
+        </div>
+
+        <div class="teacher-sign">{{content.teacher_sign_1}}</div>
+      </div>
+    </section>
+
+    

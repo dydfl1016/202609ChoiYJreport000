@@ -1,0 +1,31 @@
+<section class="report-section" aria-labelledby="ev-building-heading">
+      <div class="content-card reveal-item">
+        <span class="section-eyebrow">{{content.section_eyebrow_1}}</span>
+        <h2 id="ev-building-heading" class="section-title">{{content.section_title_1}}<br>{{content.br_after_1}}</h2>
+
+        <p class="section-desc">{{content.section_desc_1}}</p>
+
+        <div class="pattern-card-grid">
+          {{#each module.patterns}}<div class="pattern-card">
+            <div class="pattern-header">
+              <span class="pattern-tag">{{item.label}}</span>
+              <span class="pattern-metric">{{item.activityCountLabel}}</span>
+            </div>
+            <div class="pattern-formula">{{item.formula}}</div>
+            <div class="pattern-examples">
+              {{#each item.examples}}<div class="sample-sentence">{{item}}</div>{{/each}}
+            </div>
+          </div>{{/each}}
+        </div>
+
+        <div class="building-summary-bar">
+          <div>
+            <span class="building-summary-count">{{content.building_summary_count_1}}</span>
+            <span style="color:var(--color-text-muted); font-size:0.8125rem;">{{content.span_1}}</span>
+          </div>
+          <div class="structure-chain">{{content.structure_chain_1}}</div>
+        </div>
+      </div>
+    </section>
+
+    

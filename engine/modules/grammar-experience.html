@@ -1,0 +1,32 @@
+<section class="report-section" aria-labelledby="ev-grammar-heading">
+      <div class="content-card reveal-item">
+        <span class="section-eyebrow">{{content.section_eyebrow_1}}</span>
+        <h2 id="ev-grammar-heading" class="section-title">{{content.section_title_1}}<br>{{content.br_after_1}}</h2>
+
+        <p class="section-desc">
+          <strong>{{content.strong_1}}</strong>{{content.strong_after_1}}</p>
+
+        <div class="grammar-stage">
+          <div class="grammar-tabs" role="group" aria-label="{{content.label_18}}">
+            <button type="button" class="g-tab-btn active" id="tab-demo-1" data-grammar-example="1" aria-controls="grammar-result" aria-pressed="true">{{content.g_tab_btn_1}}</button>
+            <button type="button" class="g-tab-btn" id="tab-demo-2" data-grammar-example="2" aria-controls="grammar-result" aria-pressed="false">{{content.g_tab_btn_2}}</button>
+          </div>
+
+          <div class="g-visual-row">
+            <div class="noun-box" id="view-noun">{{grammarExamples.0.noun}}</div>
+            <span class="op-plus">{{content.op_plus_1}}</span>
+            <div class="tag-box" id="view-tag">{{grammarExamples.0.tag}}</div>
+          </div>
+
+          <div class="result-display-box" id="grammar-result" aria-live="polite">{{grammarExamples.0.result}}</div>
+        </div>
+
+        <p class="section-desc" style="font-size: 0.875rem; margin-bottom: 8px;">{{content.section_desc_1}}</p>
+
+        <div class="tag-chips-wrap">
+          {{#each module.tags}}<span class="tag-micro-chip">{{item.tag_micro_chip}}</span>{{/each}}
+        </div>
+      </div>
+    </section>
+
+    
