@@ -1,5 +1,16 @@
 <!DOCTYPE html>
-<html lang="ko"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>LE ENGLISH 2026-09 Learning Report | 최예준</title><link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&amp;family=Pretendard:wght@400;500;600;700&amp;display=swap" rel="stylesheet"><style>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LE ENGLISH 2026 September Learning Report | 최예준</title>
+
+  <!-- Typography: Pretendard for Korean, Plus Jakarta Sans for English/Metrics -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@500;600;700;800&family=Pretendard:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
     /* ==================================================
        1. DESIGN SYSTEM & CSS VARIABLES
        ================================================== */
@@ -131,8 +142,8 @@
 
     /* Scroll Reveal Engine */
     .reveal-item {
-      opacity: 1;
-      transform: none;
+      opacity: 0;
+      transform: translateY(18px);
       transition: opacity 0.6s var(--timing-smooth), transform 0.6s var(--timing-smooth);
       will-change: opacity, transform;
     }
@@ -1044,26 +1055,16 @@
         transition: none !important;
       }
     }
-  
-/* Intentional accessibility improvements; original palette and geometry retained. */
-.section-desc,.next-step-desc,.archive-body,.teacher-quote,.growing-next-text,.sample-sentence,.pattern-formula { font-size: 1rem; }
-.fb-label,.chip-visual,.snapshot-label,.step-desc,.metric-title { font-size: .875rem; }
-.g-tab-btn { min-height:44px; min-width:44px; font-size:.875rem; }
-a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid var(--color-accent); outline-offset:3px; }
-.fb-group { border:0; padding:0; min-width:0; margin:0 0 22px; }
-.feedback-options { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:8px; }
-.choice-chip { position:relative; min-width:0; }
-.chip-visual { width:100%; min-height:48px; text-align:center; padding:10px 12px; }
-.choice-chip input:checked + .chip-visual { box-shadow:inset 0 0 0 1px var(--color-accent); }
-.building-summary-bar,.pattern-header,.step-content { flex-wrap:wrap; gap:8px; }
-.snapshot-grid,.record-metric-row { grid-template-columns:repeat(2,minmax(0,1fr)); }
-.record-metric-row { grid-template-columns:repeat(3,minmax(0,1fr)); }
-.stream-diagram { flex-wrap:wrap; gap:6px; }
-.structure-chain,.pattern-tag,.step-text-group { min-width:0; overflow-wrap:anywhere; }
-.feedback-note { font-size:.875rem; color:var(--color-text-muted); margin-bottom:12px; }
-@media(max-width:359px) { .feedback-options,.snapshot-grid,.record-metric-row { grid-template-columns:1fr; } }
-@media(prefers-reduced-motion:reduce) { *,*::before,*::after { animation:none!important; transition:none!important; scroll-behavior:auto!important; } .archive-btn:hover { transform:none; } }
-</style></head><body><main class="report-shell"><header class="report-hero" aria-label="보고서 개요">
+  </style>
+</head>
+<body>
+
+  <main class="report-shell">
+
+    <!-- ==============================================
+         01 HERO
+         ============================================== -->
+    <header class="report-hero" aria-label="보고서 개요">
       <div class="hero-meta reveal-item">
         <span class="hero-badge-brand">LE ENGLISH</span>
         <span class="hero-badge-student">최예준 학생 · 초등학교 5학년</span>
@@ -1079,44 +1080,49 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
         <p>
           9월의 예준이는 영어 문장을 단어 하나하나의 뜻으로만 읽는 데서 한 걸음 더 나아갔습니다.
         </p>
-<p>
+        <p>
           단어의 의미를 확인하고, 문장 속 위치와 관계를 살피며 문장 전체의 의미를 구성하는 경험이 늘어났습니다.
         </p>
-<p>
+        <p>
           이번 달의 핵심 변화는 학습량 자체보다 <strong>“영어 문장을 바라보는 방식의 변화”</strong>입니다.
         </p>
       </div>
     </header>
 
-    
-<section class="report-section" aria-labelledby="overview-glance-heading">
+    <!-- ==============================================
+         02 MONTH AT A GLANCE
+         ============================================== -->
+    <section class="report-section" aria-labelledby="glance-heading">
       <span class="section-eyebrow">Overview</span>
-      <h2 id="overview-glance-heading" class="section-title">9월 학습 한눈에 보기</h2>
+      <h2 id="glance-heading" class="section-title">9월 학습 한눈에 보기</h2>
       <p class="section-desc">9월 한 달간 실행된 실제 수업 기록과 활동 데이터 요약입니다.</p>
 
       <div class="snapshot-grid">
-        <div class="snapshot-cell reveal-item ">
+        <div class="snapshot-cell reveal-item">
           <div class="snapshot-metric">17</div>
           <div>
             <div class="snapshot-label">수업 진행</div>
             <div class="snapshot-sub">예정 16회 + 보충 1회</div>
           </div>
         </div>
-<div class="snapshot-cell reveal-item ">
+
+        <div class="snapshot-cell reveal-item">
           <div class="snapshot-metric">3</div>
           <div>
             <div class="snapshot-label">핵심 영역</div>
             <div class="snapshot-sub">Reading · Building · Grammar</div>
           </div>
         </div>
-<div class="snapshot-cell reveal-item ">
+
+        <div class="snapshot-cell reveal-item">
           <div class="snapshot-metric">10</div>
           <div>
             <div class="snapshot-label">대표 문장 구성</div>
             <div class="snapshot-sub">Unscramble 배열 훈련</div>
           </div>
         </div>
-<div class="snapshot-cell reveal-item highlight-cell">
+
+        <div class="snapshot-cell highlight-cell reveal-item">
           <div class="snapshot-metric">OCT</div>
           <div>
             <div class="snapshot-label">Speaking Output</div>
@@ -1126,16 +1132,19 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
       </div>
     </section>
 
-    
-<section class="report-section" aria-labelledby="learning-continuum-continuum-heading">
+    <!-- ==============================================
+         03 LEARNING CONTINUUM
+         ============================================== -->
+    <section class="report-section" aria-labelledby="continuum-heading">
       <span class="section-eyebrow">Learning Continuum</span>
-      <h2 id="learning-continuum-continuum-heading" class="section-title">예준이의 영어가 연결되는 과정</h2>
+      <h2 id="continuum-heading" class="section-title">예준이의 영어가 연결되는 과정</h2>
       <p class="section-desc">
         성취 점수가 아닌, 지식이 문장으로 조직화되어 발화로 이어지는 5단계 로드맵 상의 현재 위치입니다.
       </p>
 
       <div class="stepper-container">
-        <div class="stepper-step reveal-item ">
+        <!-- 01 Word -->
+        <div class="stepper-step reveal-item">
           <div class="step-idx">01</div>
           <div class="step-content">
             <div class="step-text-group">
@@ -1145,7 +1154,9 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
             <span class="step-status-tag">Foundation</span>
           </div>
         </div>
-<div class="stepper-step reveal-item active-phase">
+
+        <!-- 02 Meaning (9월) -->
+        <div class="stepper-step active-phase reveal-item">
           <div class="step-idx">02</div>
           <div class="step-content">
             <div class="step-text-group">
@@ -1155,7 +1166,9 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
             <span class="step-status-tag">9월 집중</span>
           </div>
         </div>
-<div class="stepper-step reveal-item active-phase">
+
+        <!-- 03 Structure (9월) -->
+        <div class="stepper-step active-phase reveal-item">
           <div class="step-idx">03</div>
           <div class="step-content">
             <div class="step-text-group">
@@ -1165,7 +1178,9 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
             <span class="step-status-tag">9월 집중</span>
           </div>
         </div>
-<div class="stepper-step reveal-item active-phase">
+
+        <!-- 04 Sentence (9월) -->
+        <div class="stepper-step active-phase reveal-item">
           <div class="step-idx">04</div>
           <div class="step-content">
             <div class="step-text-group">
@@ -1175,7 +1190,9 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
             <span class="step-status-tag">9월 집중</span>
           </div>
         </div>
-<div class="stepper-step reveal-item next-phase">
+
+        <!-- 05 Speaking (10월) -->
+        <div class="stepper-step next-phase reveal-item">
           <div class="step-idx">05</div>
           <div class="step-content">
             <div class="step-text-group">
@@ -1188,11 +1205,13 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
       </div>
     </section>
 
-    
-<section class="report-section" aria-labelledby="reading-vocabulary-ev-reading-heading">
+    <!-- ==============================================
+         04 EVIDENCE 01 — READING & VOCABULARY
+         ============================================== -->
+    <section class="report-section" aria-labelledby="ev-reading-heading">
       <div class="content-card reveal-item">
-        <span class="section-eyebrow">Evidence 01 · Reading &amp; Vocabulary</span>
-        <h2 id="reading-vocabulary-ev-reading-heading" class="section-title">단어의 뜻을 넘어<br>문장의 의미로</h2>
+        <span class="section-eyebrow">Evidence 01 · Reading & Vocabulary</span>
+        <h2 id="ev-reading-heading" class="section-title">단어의 뜻을 넘어<br>문장의 의미로</h2>
 
         <p class="section-desc">
           Bricks Reading Translation 활동을 통해 영어 문장을 읽고 우리말 의미로 옮기는 연습을 지속했습니다. 단어를 독립된 암기 항목으로만 다루지 않고 맥락 속 의미로 전환하는 훈련을 진행했습니다.
@@ -1208,21 +1227,22 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
 
         <div class="chips-cloud" aria-label="수업 확인 어휘 목록">
           <span class="vocab-pill">fin</span>
-<span class="vocab-pill">scale</span>
-<span class="vocab-pill">perfect</span>
-<span class="vocab-pill">crescent moon</span>
-<span class="vocab-pill">vase</span>
-<span class="vocab-pill">almost</span>
-<span class="vocab-pill">same</span>
-<span class="vocab-pill">rectangle</span>
-<span class="vocab-pill">left / right</span>
-<span class="vocab-pill">bright</span>
-<span class="vocab-pill">around</span>
-<span class="vocab-pill">balloon</span>
-<span class="vocab-pill">different</span>
-<span class="vocab-pill">country</span>
+          <span class="vocab-pill">scale</span>
+          <span class="vocab-pill">perfect</span>
+          <span class="vocab-pill">crescent moon</span>
+          <span class="vocab-pill">vase</span>
+          <span class="vocab-pill">almost</span>
+          <span class="vocab-pill">same</span>
+          <span class="vocab-pill">rectangle</span>
+          <span class="vocab-pill">left / right</span>
+          <span class="vocab-pill">bright</span>
+          <span class="vocab-pill">around</span>
+          <span class="vocab-pill">balloon</span>
+          <span class="vocab-pill">different</span>
+          <span class="vocab-pill">country</span>
         </div>
 
+        <!-- Observed State: Growing Next -->
         <div class="growing-next-box">
           <div class="growing-next-eyebrow">Observed Pattern · Growing Next</div>
           <div class="growing-next-text">
@@ -1234,17 +1254,20 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
       </div>
     </section>
 
-    
-<section class="report-section" aria-labelledby="sentence-building-ev-building-heading">
+    <!-- ==============================================
+         05 EVIDENCE 02 — SENTENCE BUILDING
+         ============================================== -->
+    <section class="report-section" aria-labelledby="ev-building-heading">
       <div class="content-card reveal-item">
         <span class="section-eyebrow">Evidence 02 · Sentence Building</span>
-        <h2 id="sentence-building-ev-building-heading" class="section-title">흩어진 단어에서<br>문장의 질서를 찾다</h2>
+        <h2 id="ev-building-heading" class="section-title">흩어진 단어에서<br>문장의 질서를 찾다</h2>
 
         <p class="section-desc">
           Unscramble 활동을 통해 흩어진 단어를 배열하며 문장의 성분이 어떤 순서로 결합하는지 파악했습니다. 이번 달에는 대표적으로 2가지 핵심 문장 패턴을 중점 구성했습니다.
         </p>
 
         <div class="pattern-card-grid">
+          <!-- Pattern 01 -->
           <div class="pattern-card">
             <div class="pattern-header">
               <span class="pattern-tag">PATTERN 01 · MOVEMENT</span>
@@ -1253,10 +1276,12 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
             <div class="pattern-formula">Subject + be going to + Place</div>
             <div class="pattern-examples">
               <div class="sample-sentence">• He’s going to the bakery.</div>
-<div class="sample-sentence">• She’s going to the library.</div>
+              <div class="sample-sentence">• She’s going to the library.</div>
             </div>
           </div>
-<div class="pattern-card">
+
+          <!-- Pattern 02 -->
+          <div class="pattern-card">
             <div class="pattern-header">
               <span class="pattern-tag">PATTERN 02 · ACTION</span>
               <span class="pattern-metric">6 sentences</span>
@@ -1264,7 +1289,7 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
             <div class="pattern-formula">Subject + be + -ing</div>
             <div class="pattern-examples">
               <div class="sample-sentence">• She’s eating.</div>
-<div class="sample-sentence">• He’s drawing.</div>
+              <div class="sample-sentence">• He’s drawing.</div>
             </div>
           </div>
         </div>
@@ -1279,29 +1304,32 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
       </div>
     </section>
 
-    
-<section class="report-section" aria-labelledby="grammar-experience-ev-grammar-heading">
+    <!-- ==============================================
+         06 EVIDENCE 03 — GRAMMAR EXPERIENCE
+         ============================================== -->
+    <section class="report-section" aria-labelledby="ev-grammar-heading">
       <div class="content-card reveal-item">
         <span class="section-eyebrow">Evidence 03 · Grammar Experience</span>
-        <h2 id="grammar-experience-ev-grammar-heading" class="section-title">문법을 공식보다<br>‘역할’로 경험했습니다</h2>
+        <h2 id="ev-grammar-heading" class="section-title">문법을 공식보다<br>‘역할’로 경험했습니다</h2>
 
         <p class="section-desc">
           <strong>딱 보면 아는 영어 – 꼬리표 달기 게임</strong>: 관계대명사 that을 문법 용어로 외우기 전에 앞 명사에 정보를 덧붙여 설명하는 ‘확장 꼬리표(tag)’의 역할로 학습했습니다.
         </p>
 
+        <!-- Interactive Visual Simulation -->
         <div class="grammar-stage">
-          <div class="grammar-tabs" role="group" aria-label="문법 예시 전환">
-            <button type="button" class="g-tab-btn active" id="grammar-experience-tab-demo-1" data-grammar-example="1" aria-controls="grammar-experience-grammar-result" aria-pressed="true">Example 01</button>
-            <button type="button" class="g-tab-btn" id="grammar-experience-tab-demo-2" data-grammar-example="2" aria-controls="grammar-experience-grammar-result" aria-pressed="false">Example 02</button>
+          <div class="grammar-tabs" role="tablist" aria-label="문법 예시 전환">
+            <button type="button" class="g-tab-btn active" id="tab-demo-1" role="tab" aria-selected="true" onclick="applyGrammarDemo(1)">Example 01</button>
+            <button type="button" class="g-tab-btn" id="tab-demo-2" role="tab" aria-selected="false" onclick="applyGrammarDemo(2)">Example 02</button>
           </div>
 
           <div class="g-visual-row">
-            <div class="noun-box" id="grammar-experience-view-noun">the banana</div>
+            <div class="noun-box" id="view-noun">the banana</div>
             <span class="op-plus">+</span>
-            <div class="tag-box" id="grammar-experience-view-tag">that is yellow</div>
+            <div class="tag-box" id="view-tag">that is yellow</div>
           </div>
 
-          <div class="result-display-box" id="grammar-experience-grammar-result" aria-live="polite">the banana that is yellow</div>
+          <div class="result-display-box" id="view-result">the banana that is yellow</div>
         </div>
 
         <p class="section-desc" style="font-size: 0.875rem; margin-bottom: 8px;">
@@ -1310,29 +1338,31 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
 
         <div class="tag-chips-wrap">
           <span class="tag-micro-chip">that is yellow</span>
-<span class="tag-micro-chip">that is green</span>
-<span class="tag-micro-chip">that is big</span>
-<span class="tag-micro-chip">that can fly</span>
-<span class="tag-micro-chip">that has great sound</span>
-<span class="tag-micro-chip">that I can connect to my phone</span>
+          <span class="tag-micro-chip">that is green</span>
+          <span class="tag-micro-chip">that is big</span>
+          <span class="tag-micro-chip">that can fly</span>
+          <span class="tag-micro-chip">that has great sound</span>
+          <span class="tag-micro-chip">that I can connect to my phone</span>
         </div>
       </div>
     </section>
 
-    
-<section class="report-section" aria-labelledby="teacher-interpretation-teacher-heading">
+    <!-- ==============================================
+         07 TEACHER'S NOTE
+         ============================================== -->
+    <section class="report-section" aria-labelledby="teacher-heading">
       <div class="teacher-card reveal-item">
-        <span class="section-eyebrow">Teacher&#39;s Interpretation</span>
-        <h2 id="teacher-interpretation-teacher-heading" class="section-title">선생님의 관찰</h2>
+        <span class="section-eyebrow">Teacher's Interpretation</span>
+        <h2 id="teacher-heading" class="section-title">선생님의 관찰</h2>
 
         <div class="section-desc" style="margin-bottom:0;">
           <p>
             예준이는 이제 영어를 단순히 많이 접하는 것보다 이미 배운 영어를 얼마나 정확하게 연결하고 사용할 수 있는가가 중요해지는 단계에 들어가고 있습니다.
           </p>
-<p>
+          <p style="margin-top: 12px;">
             9월에는 Reading, Translation, Sentence Building, Grammar 활동을 서로 분리하기보다 한 활동에서 익힌 것을 다른 활동에서 다시 사용하도록 연결했습니다. 그 과정에서 <strong>단어 → 의미 → 구조 → 문장</strong>으로 영어를 바라보는 범위가 넓어졌습니다.
           </p>
-<p>
+          <p style="margin-top: 12px;">
             한편 이미 학습했던 일부 기초 어휘가 즉시 떠오르지 않는 경우도 확인되었습니다. 따라서 앞으로는 새로운 내용을 확장하면서 기존 어휘의 인출 속도와 정확도를 함께 다질 예정입니다.
           </p>
 
@@ -1345,11 +1375,13 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
       </div>
     </section>
 
-    
-<section class="report-section" aria-labelledby="next-step-october-heading">
+    <!-- ==============================================
+         08 OCTOBER NEXT STEP (Informational Only)
+         ============================================== -->
+    <section class="report-section" aria-labelledby="october-heading">
       <div class="next-step-card reveal-item">
         <span class="next-step-tag">OCTOBER ROADMAP</span>
-        <h2 id="next-step-october-heading" class="next-step-title">이제, 아는 영어를 입 밖으로.</h2>
+        <h2 id="october-heading" class="next-step-title">이제, 아는 영어를 입 밖으로.</h2>
 
         <p class="next-step-desc">
           10월에는 9월에 다진 문장 이해와 구조 감각을 Speaking Output으로 연결합니다. 연습했던 문장을 그대로 암송하는 데 그치지 않고, 그림과 상황을 보고 질문을 들은 뒤 알고 있는 단어와 문장 구조를 이용해 즉시 반응하는 훈련을 늘립니다.
@@ -1361,14 +1393,16 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
       </div>
     </section>
 
-    
-<section class="report-section" aria-labelledby="class-record-record-heading">
+    <!-- ==============================================
+         09 SEPTEMBER CLASS RECORD
+         ============================================== -->
+    <section class="report-section" aria-labelledby="record-heading">
       <div class="reveal-item">
         <span class="section-eyebrow">Class Record</span>
-        <h2 id="class-record-record-heading" class="section-title">9월 수업 기록</h2>
+        <h2 id="record-heading" class="section-title">9월 수업 기록</h2>
       </div>
 
-      <div class="record-metric-row reveal-item" id="class-record-counter-trigger">
+      <div class="record-metric-row reveal-item" id="counter-trigger">
         <div class="record-metric-card">
           <div class="metric-digits" data-target="16">16</div>
           <div class="metric-title">예정 수업</div>
@@ -1389,10 +1423,13 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
         2026년 9월, 총 17회의 수업을 진행했습니다.
       </p>
 
-      </section>
+      <!-- Future longitudinal learning data visualization placeholder -->
+    </section>
 
-    
-<section class="report-section" aria-label="학습 아카이브 링크">
+    <!-- ==============================================
+         10 LEARNING ARCHIVE CTA
+         ============================================== -->
+    <section class="report-section" aria-label="학습 아카이브 링크">
       <div class="archive-card reveal-item">
         <span class="archive-eyebrow">LEARNING ARCHIVE</span>
         <h2 class="archive-title">결과뿐 아니라<br>과정까지 확인해 보세요.</h2>
@@ -1404,7 +1441,11 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
         <div class="archive-meta-tag">최예준 · September Learning Archive</div>
 
         <div>
-          <a href="https://drive.google.com/drive/folders/1uIBXIILS6hPg6kJnmA1fTUiHPrVn42Np" target="_blank" rel="noopener noreferrer" class="archive-btn" aria-label="최예준 학생 학습 기록 구글 드라이브 폴더 열기 (새 창)">
+          <a href="https://drive.google.com/drive/folders/1uIBXIILS6hPg6kJnmA1fTUiHPrVn42Np"
+             target="_blank"
+             rel="noopener noreferrer"
+             class="archive-btn"
+             aria-label="최예준 학생 학습 기록 구글 드라이브 폴더 열기 (새 창)">
             <span>예준이의 학습 기록물 보기</span>
             <span aria-hidden="true">→</span>
           </a>
@@ -1412,65 +1453,253 @@ a:focus-visible,button:focus-visible,textarea:focus-visible { outline:3px solid 
       </div>
     </section>
 
-    
-<section class="report-section" aria-labelledby="parent-feedback-feedback-heading"><div class="feedback-form-container"><span class="section-eyebrow">Parent Feedback</span><h2 id="parent-feedback-feedback-heading" class="section-title">이번 학습보고서,<br>어떻게 읽으셨나요?</h2><p class="section-desc">보호자님의 짧은 의견은 더 읽기 쉽고 도움이 되는 학습보고서를 만드는 데 활용됩니다.</p><form data-feedback><input type="hidden" name="reportId" value="choi-yejun-2026-09"><input type="hidden" name="studentId" value="choi-yejun"><input type="hidden" name="month" value="2026-09"><fieldset class="fb-group"><legend class="fb-label">1. 이번 학습보고서는 읽기 편했나요?</legend><div class="feedback-options"><label class="choice-chip"><input type="radio" name="readabilityScore" value="5" required><span class="chip-visual">매우 그렇다</span></label><label class="choice-chip"><input type="radio" name="readabilityScore" value="4" required><span class="chip-visual">그렇다</span></label><label class="choice-chip"><input type="radio" name="readabilityScore" value="3" required><span class="chip-visual">보통이다</span></label><label class="choice-chip"><input type="radio" name="readabilityScore" value="2" required><span class="chip-visual">아니다</span></label><label class="choice-chip"><input type="radio" name="readabilityScore" value="1" required><span class="chip-visual">전혀 아니다</span></label></div></fieldset><fieldset class="fb-group"><legend class="fb-label">2. 자녀의 이번 달 학습 과정과 변화를 이해하는 데 도움이 되었나요?</legend><div class="feedback-options"><label class="choice-chip"><input type="radio" name="growthClarityScore" value="5" required><span class="chip-visual">매우 그렇다</span></label><label class="choice-chip"><input type="radio" name="growthClarityScore" value="4" required><span class="chip-visual">그렇다</span></label><label class="choice-chip"><input type="radio" name="growthClarityScore" value="3" required><span class="chip-visual">보통이다</span></label><label class="choice-chip"><input type="radio" name="growthClarityScore" value="2" required><span class="chip-visual">아니다</span></label><label class="choice-chip"><input type="radio" name="growthClarityScore" value="1" required><span class="chip-visual">전혀 아니다</span></label></div></fieldset><fieldset class="fb-group"><legend class="fb-label">3. 학습 내용과 선생님의 설명이 이해하기 쉽게 전달되었나요?</legend><div class="feedback-options"><label class="choice-chip"><input type="radio" name="explanationClarityScore" value="5" required><span class="chip-visual">매우 그렇다</span></label><label class="choice-chip"><input type="radio" name="explanationClarityScore" value="4" required><span class="chip-visual">그렇다</span></label><label class="choice-chip"><input type="radio" name="explanationClarityScore" value="3" required><span class="chip-visual">보통이다</span></label><label class="choice-chip"><input type="radio" name="explanationClarityScore" value="2" required><span class="chip-visual">아니다</span></label><label class="choice-chip"><input type="radio" name="explanationClarityScore" value="1" required><span class="chip-visual">전혀 아니다</span></label></div></fieldset><div class="fb-group"><label class="fb-label" for="parent-feedback-feedback-comment">학습보고서에 대한 의견이 있으시면 남겨주세요.</label><textarea id="parent-feedback-feedback-comment" name="comment" class="fb-textarea" placeholder="더 보고 싶은 내용이나 불편했던 점 등 자유롭게 적어주세요. (선택)"></textarea></div><p class="feedback-note">피드백 기능을 준비하고 있습니다. 입력하신 내용은 현재 서버로 전송되지 않습니다.</p><button type="submit" class="feedback-submit-btn" disabled><span>피드백 보내기</span><span aria-hidden="true">→</span></button><div class="fb-status-banner" role="status" aria-live="polite"></div><noscript><p class="feedback-note">피드백 양식은 JavaScript가 필요합니다. 보고서 본문은 그대로 읽으실 수 있습니다.</p></noscript></form></div></section>
-<footer class="brand-footer" aria-label="브랜드 안내">
+    <!-- ==============================================
+         11 PARENT FEEDBACK
+         ============================================== -->
+    <section class="report-section" aria-labelledby="feedback-heading">
+      <div class="feedback-form-container reveal-item">
+        <span class="section-eyebrow">Parent Feedback</span>
+        <h2 id="feedback-heading" class="section-title">이번 달 예준이의 학습,<br>어떻게 보셨나요?</h2>
+        <p class="section-desc">
+          보호자님의 짧은 피드백은 다음 달 수업 방향을 세우는 데 소중한 참고 자료가 됩니다.
+        </p>
+
+        <form id="parentFeedbackForm" onsubmit="handleFeedbackSubmit(event)">
+          <!-- Hidden Identifiers for Future API -->
+          <input type="hidden" name="studentId" value="choi-yejun">
+          <input type="hidden" name="studentName" value="최예준">
+          <input type="hidden" name="reportMonth" value="2026-09">
+
+          <!-- Question 1 -->
+          <div class="fb-group">
+            <label class="fb-label">1. 이번 달 보고서에서 가장 눈에 들어온 변화는 무엇인가요?</label>
+            <div class="selectable-chip-grid">
+              <label class="choice-chip">
+                <input type="radio" name="highlight" value="문장 이해" required>
+                <span class="chip-visual">문장 이해</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="highlight" value="어휘">
+                <span class="chip-visual">어휘</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="highlight" value="문장 만들기">
+                <span class="chip-visual">문장 만들기</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="highlight" value="문법 활용">
+                <span class="chip-visual">문법 활용</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="highlight" value="학습 태도">
+                <span class="chip-visual">학습 태도</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="highlight" value="기타">
+                <span class="chip-visual">기타</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 2 -->
+          <div class="fb-group">
+            <label class="fb-label">2. 10월에 특히 보고 싶은 변화는 무엇인가요?</label>
+            <div class="selectable-chip-grid">
+              <label class="choice-chip">
+                <input type="radio" name="nextFocus" value="말하기 자신감" required>
+                <span class="chip-visual">말하기 자신감</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="nextFocus" value="어휘 인출">
+                <span class="chip-visual">어휘 인출</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="nextFocus" value="문장 만들기">
+                <span class="chip-visual">문장 만들기</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="nextFocus" value="읽기 이해">
+                <span class="chip-visual">읽기 이해</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="nextFocus" value="스스로 해결하기">
+                <span class="chip-visual">스스로 해결하기</span>
+              </label>
+              <label class="choice-chip">
+                <input type="radio" name="nextFocus" value="기타">
+                <span class="chip-visual">기타</span>
+              </label>
+            </div>
+          </div>
+
+          <!-- Question 3 -->
+          <div class="fb-group">
+            <label for="parentMessageInput" class="fb-label">3. 선생님께 남기실 말씀이 있나요?</label>
+            <textarea id="parentMessageInput" name="parentMessage" class="fb-textarea" placeholder="선택 사항입니다."></textarea>
+          </div>
+
+          <button type="submit" class="feedback-submit-btn">
+            <span>피드백 보내기</span>
+            <span aria-hidden="true">→</span>
+          </button>
+
+          <!-- Honest Demo Notice Banner -->
+          <div id="fbStatusNotice" class="fb-status-banner" role="status">
+            피드백 기능을 준비하고 있습니다. 입력하신 내용은 현재 서버로 전송되지 않습니다.
+          </div>
+        </form>
+      </div>
+    </section>
+
+    <!-- ==============================================
+         12 BRAND ENDING
+         ============================================== -->
+    <footer class="brand-footer" aria-label="브랜드 안내">
       <div class="footer-brand">LE ENGLISH</div>
       <div class="footer-slogan">아는 영어를, 사용할 수 있는 영어로.</div>
       <div class="footer-sub">Small Steps · Big English · Brighter Days</div>
       <div class="footer-copyright">LE ENGLISH 2026 September Learning Report</div>
     </footer>
 
-  </main><script id="report-runtime-data" type="application/json">{"reportId":"choi-yejun-2026-09","studentId":"choi-yejun","month":"2026-09","grammarExamples":[{"noun":"the banana","tag":"that is yellow","result":"the banana that is yellow","sourceType":"REPORT_EXAMPLE","utteranceType":"EXAMPLE_NOT_VERIFIED_STUDENT_UTTERANCE"},{"noun":"a TV","tag":"that has a big screen","result":"a TV that has a big screen","sourceType":"REPORT_EXAMPLE","utteranceType":"EXAMPLE_NOT_VERIFIED_STUDENT_UTTERANCE"}]}</script><script type="module">const questions = Object.freeze([
-  {key:'readabilityScore',text:'이번 학습보고서는 읽기 편했나요?'},
-  {key:'growthClarityScore',text:'자녀의 이번 달 학습 과정과 변화를 이해하는 데 도움이 되었나요?'},
-  {key:'explanationClarityScore',text:'학습 내용과 선생님의 설명이 이해하기 쉽게 전달되었나요?'}
-]);
-const options = Object.freeze([[5,'매우 그렇다'],[4,'그렇다'],[3,'보통이다'],[2,'아니다'],[1,'전혀 아니다']]);
-function createFeedbackPayload(identity, values, now = new Date()) {
-  const payload = {reportId:identity.reportId,studentId:identity.studentId,month:identity.month};
-  for (const {key} of questions) {
-    const score = Number(values[key]);
-    if (!Number.isInteger(score) || score < 1 || score > 5) throw new Error('각 문항의 응답을 선택해주세요.');
-    payload[key] = score;
-  }
-  payload.comment = typeof values.comment === 'string' ? values.comment : '';
-  payload.createdAt = now.toISOString();
-  return payload;
-}
-// Adapter boundary: deliberately no persistence, network call or success result.
-async function submitFeedback(payload) {
-  return {status:'unavailable',message:'피드백 기능을 준비하고 있습니다. 입력하신 내용은 현재 서버로 전송되지 않습니다.'};
-}
+  </main>
 
-const identity=JSON.parse(document.getElementById('report-runtime-data').textContent);
-const reduce=window.matchMedia('(prefers-reduced-motion: reduce)');
-// Static body is the primary rendering. Interactions only enhance it.
-for(const stage of document.querySelectorAll('.grammar-stage')){
- const buttons=[...stage.querySelectorAll('[data-grammar-example]')];
- for(const button of buttons)button.addEventListener('click',()=>{
-  const example=identity.grammarExamples[Number(button.dataset.grammarExample)-1];
-  if(!example)return;
-  for(const b of buttons){const selected=b===button;b.classList.toggle('active',selected);b.setAttribute('aria-pressed',String(selected));}
-  stage.querySelector('.noun-box').textContent=example.noun;
-  stage.querySelector('.tag-box').textContent=example.tag;
-  stage.querySelector('.result-display-box').textContent=example.result;
- });
-}
-for(const form of document.querySelectorAll('[data-feedback]')){
- const button=form.querySelector('[type=submit]');button.disabled=false;
- form.addEventListener('submit',async event=>{
-  event.preventDefault();if(!form.reportValidity())return;
-  const notice=form.querySelector('[role=status]');
-  try{
-   const values=Object.fromEntries(new FormData(form));
-   const payload=createFeedbackPayload(identity,values);
-   button.disabled=true;
-   const result=await submitFeedback(payload);
-   // This adapter returns unavailable, never a false success.
-   notice.textContent=result.message;
-  }catch(error){notice.textContent='피드백을 전송하지 못했습니다. 입력 내용은 유지됩니다.';}
-  finally{button.disabled=false;notice.classList.add('visible');notice.scrollIntoView({behavior:reduce.matches?'auto':'smooth',block:'nearest'});}
- });
-}
-</script></body></html>
+  <!-- ==================================================
+       JAVASCRIPT REPORT ENGINE (VANILLA JS)
+       ================================================== -->
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      // 1. Accessibility: Check for reduced motion preference
+      const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+      // 2. IntersectionObserver for Reveal Animations
+      const revealItems = document.querySelectorAll('.reveal-item');
+      if (prefersReducedMotion) {
+        revealItems.forEach(el => el.classList.add('revealed'));
+      } else {
+        const revealObserver = new IntersectionObserver((entries, observer) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting) {
+              entry.target.classList.add('revealed');
+              observer.unobserve(entry.target);
+            }
+          });
+        }, {
+          threshold: 0.1,
+          rootMargin: '0px 0px -30px 0px'
+        });
+
+        revealItems.forEach(el => revealObserver.observe(el));
+      }
+
+      // 3. Count-up Animation for Verified Class Metrics
+      const metricBox = document.getElementById('counter-trigger');
+      if (metricBox && !prefersReducedMotion) {
+        let counted = false;
+        const digits = metricBox.querySelectorAll('.metric-digits');
+
+        const countObserver = new IntersectionObserver((entries, obs) => {
+          entries.forEach(entry => {
+            if (entry.isIntersecting && !counted) {
+              counted = true;
+              digits.forEach(digitEl => {
+                const targetVal = parseInt(digitEl.getAttribute('data-target'), 10);
+                const prefix = digitEl.getAttribute('data-prefix') || '';
+                let current = 0;
+                const duration = 1000;
+                const stepMs = Math.max(Math.floor(duration / targetVal), 30);
+
+                digitEl.textContent = prefix + '0';
+                const counterTimer = setInterval(() => {
+                  current++;
+                  digitEl.textContent = prefix + current;
+                  if (current >= targetVal) {
+                    clearInterval(counterTimer);
+                    digitEl.textContent = prefix + targetVal;
+                  }
+                }, stepMs);
+              });
+              obs.unobserve(entry.target);
+            }
+          });
+        }, { threshold: 0.25 });
+
+        countObserver.observe(metricBox);
+      }
+    });
+
+    // 4. Grammar Tag Experience: Interactive Demo Switcher
+    const grammarExamples = {
+      1: {
+        noun: "the banana",
+        tag: "that is yellow",
+        result: "the banana that is yellow"
+      },
+      2: {
+        noun: "a TV",
+        tag: "that has a big screen",
+        result: "a TV that has a big screen"
+      }
+    };
+
+    function applyGrammarDemo(exampleId) {
+      const tab1 = document.getElementById('tab-demo-1');
+      const tab2 = document.getElementById('tab-demo-2');
+      const nounEl = document.getElementById('view-noun');
+      const tagEl = document.getElementById('view-tag');
+      const resultEl = document.getElementById('view-result');
+
+      if (!tab1 || !tab2 || !nounEl || !tagEl || !resultEl) return;
+
+      if (exampleId === 1) {
+        tab1.classList.add('active');
+        tab1.setAttribute('aria-selected', 'true');
+        tab2.classList.remove('active');
+        tab2.setAttribute('aria-selected', 'false');
+      } else {
+        tab2.classList.add('active');
+        tab2.setAttribute('aria-selected', 'true');
+        tab1.classList.remove('active');
+        tab1.setAttribute('aria-selected', 'false');
+      }
+
+      const selected = grammarExamples[exampleId];
+      nounEl.textContent = selected.noun;
+      tagEl.textContent = selected.tag;
+      resultEl.textContent = selected.result;
+    }
+
+    // 5. Parent Feedback Submission Handler (Form Structure Prepared for Backend)
+    function handleFeedbackSubmit(event) {
+      event.preventDefault();
+
+      const form = event.target;
+      const formData = new FormData(form);
+
+      // Structured data payload ready for future API endpoint
+      const feedbackPayload = {
+        studentId: formData.get('studentId'),
+        studentName: formData.get('studentName'),
+        reportMonth: formData.get('reportMonth'),
+        highlight: formData.get('highlight'),
+        nextFocus: formData.get('nextFocus'),
+        parentMessage: formData.get('parentMessage') || ''
+      };
+
+      // TODO: Connect Parent Feedback API endpoint here.
+      // Example future implementation:
+      // fetch('/api/v1/parent-feedbacks', {
+      //   method: 'POST',
+      //   headers: { 'Content-Type': 'application/json' },
+      //   body: JSON.stringify(feedbackPayload)
+      // });
+
+      // Honest UI Notice (Do not deceive parent into believing it went to a server)
+      const noticeBanner = document.getElementById('fbStatusNotice');
+      if (noticeBanner) {
+        noticeBanner.classList.add('visible');
+        noticeBanner.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+      }
+    }
+  </script>
+</body>
+</html>

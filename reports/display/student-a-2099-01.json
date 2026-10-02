@@ -1,0 +1,430 @@
+{
+  "reportId": "student-a-2099-01",
+  "studentId": "student-a",
+  "month": "2099-01",
+  "contentSchemaVersion": 1,
+  "reportRevision": 3,
+  "displayCopyVersion": 1,
+  "editorial": {
+    "status": "reviewed",
+    "strategy": "manual-editorial-selection",
+    "sourceReport": "reports/student-a-2099-01.json",
+    "sourceReportRevision": 1,
+    "sourceNarrative": "sources/student-a-2099-01.reviewed.md",
+    "readingTargetMinutes": [
+      2,
+      4
+    ],
+    "omittedSections": [],
+    "sourceReportSha256": "e5576969ae33f4046246c49ba79be10b9658298f69f85e6655ac387e13b5e4b1",
+    "sourceNarrativeSha256": "462f4d3b45474ec858e46aaacbe8a28c52b935d0bb5562a7e1152678294baa62",
+    "publishingCopy": {
+      "path": "sources/student-a-2099-01.publishing.txt",
+      "sha256": "3b1103a95d53a0193efe28d14da1f315f93bb3ad6013414fae76998090a55266",
+      "authority": "synthetic-test-fixture-not-production-approval"
+    }
+  },
+  "heroStory": {
+    "term": "2099 · Synthetic Month",
+    "title": "Synthetic reading\nBuild and speak",
+    "subtitle": "TEST FIXTURE / NOT A REAL STUDENT REPORT",
+    "paragraphs": [
+      [
+        {
+          "type": "text",
+          "text": "This is a synthetic renderer sample."
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "text": "It demonstrates concise display copy without a real learner narrative."
+        }
+      ]
+    ],
+    "flow": [
+      {
+        "keyword": "READ",
+        "label": "READ"
+      },
+      {
+        "keyword": "UNDERSTAND",
+        "label": "UNDERSTAND"
+      },
+      {
+        "keyword": "BUILD",
+        "label": "BUILD"
+      },
+      {
+        "keyword": "SPEAK",
+        "label": "SPEAK"
+      }
+    ]
+  },
+  "teacherInterpretation": {
+    "section_eyebrow_1": "SYNTHETIC INTERPRETATION",
+    "section_title_1": "Interpretation without ability claims",
+    "paragraphs": [
+      [
+        {
+          "type": "text",
+          "text": "The sample distinguishes supplied prompts from independent output."
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "text": "This is a test boundary, not a real teacher assessment."
+        }
+      ]
+    ],
+    "teacher_quote_1": "Synthetic highlighted takeaway.",
+    "teacher_sign_1": "TEST FIXTURE / NOT A REAL STUDENT REPORT"
+  },
+  "nextStep": {
+    "eyebrow": "SYNTHETIC NEXT STEP",
+    "title": "Transfer example",
+    "paragraphs": [
+      [
+        {
+          "type": "text",
+          "text": "Use a generic question variant to exercise the transfer board."
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "text": "No actual next-month plan is represented."
+        }
+      ]
+    ],
+    "transferFlow": [
+      {
+        "label": "KNOWN SENTENCE",
+        "example": "It's under the desk."
+      },
+      {
+        "label": "NEW SITUATION",
+        "example": "Is it under the chair?"
+      },
+      {
+        "label": "UNDERSTAND & RESPOND",
+        "example": ""
+      }
+    ],
+    "supportingCopy": "Synthetic transfer support copy.",
+    "goal": "UNDERSTAND → RESPOND → SPEAK",
+    "closing": "TEST FIXTURE / NOT A REAL STUDENT REPORT"
+  },
+  "modules": [
+    {
+      "id": "hero",
+      "type": "editorial-hero",
+      "editorialRole": "synthetic-validation",
+      "masterModuleRefs": [
+        "hero"
+      ],
+      "evidenceRefs": [],
+      "contentRef": "heroStory"
+    },
+    {
+      "id": "monthly-overview",
+      "type": "editorial-learning",
+      "editorialRole": "synthetic-validation",
+      "masterModuleRefs": [
+        "monthly-overview"
+      ],
+      "evidenceRefs": [
+        "fixture-01"
+      ],
+      "content": {
+        "eyebrow": "MONTHLY-OVERVIEW",
+        "title": "Synthetic monthly-overview",
+        "emphasis": "secondary",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "text": "Synthetic activity set: read, rebuild and speak. This describes renderer coverage, not a learner outcome."
+            }
+          ]
+        ],
+        "exampleGroups": [],
+        "takeaways": [
+          "Synthetic takeaway for this module."
+        ],
+        "callouts": [],
+        "panels": [],
+        "details": []
+      }
+    },
+    {
+      "id": "reading-translation",
+      "type": "editorial-learning",
+      "editorialRole": "synthetic-validation",
+      "masterModuleRefs": [
+        "reading-translation"
+      ],
+      "evidenceRefs": [
+        "fixture-02"
+      ],
+      "content": {
+        "eyebrow": "READING-TRANSLATION",
+        "title": "Synthetic reading-translation",
+        "emphasis": "major",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "text": "A synthetic reading task pairs short text with meaning. Generic topic chips exercise variable-length content."
+            }
+          ]
+        ],
+        "exampleGroups": [
+          {
+            "label": "Generic topics",
+            "items": [
+              "Milk",
+              "3D Shapes",
+              "Animal Senses",
+              "Neighborhood",
+              "Air",
+              "Time",
+              "Fish",
+              "Van Gogh",
+              "Flags",
+              "Day & Night"
+            ]
+          },
+          {
+            "label": "Generic expressions",
+            "items": [
+              "There is / There are",
+              "look + 형용사",
+              "from left to right",
+              "You can see ~"
+            ]
+          }
+        ],
+        "takeaways": [
+          "Synthetic takeaway for this module."
+        ],
+        "callouts": [
+          {
+            "label": "TEST PHONICS SUPPORT",
+            "text": "Synthetic phonics support — not a dated observation."
+          }
+        ],
+        "panels": [],
+        "details": []
+      }
+    },
+    {
+      "id": "sentence-building",
+      "type": "editorial-learning",
+      "editorialRole": "synthetic-validation",
+      "masterModuleRefs": [
+        "sentence-building"
+      ],
+      "evidenceRefs": [
+        "fixture-03"
+      ],
+      "content": {
+        "eyebrow": "SENTENCE-BUILDING",
+        "title": "Synthetic sentence-building",
+        "emphasis": "major",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "text": "A synthetic ordering task arranges supplied words. The examples are instructional samples, not student utterances."
+            }
+          ]
+        ],
+        "exampleGroups": [
+          {
+            "label": "Generic instructional examples",
+            "items": [
+              "It's sunny.",
+              "My favorite sport is tennis.",
+              "I ride my bike.",
+              "I do my homework.",
+              "I practice the piano.",
+              "It's on the chair.",
+              "It's under the desk.",
+              "It's in the toy box."
+            ]
+          }
+        ],
+        "takeaways": [
+          "Synthetic takeaway for this module."
+        ],
+        "callouts": [],
+        "panels": [],
+        "details": []
+      }
+    },
+    {
+      "id": "speaking-transfer",
+      "type": "editorial-learning",
+      "editorialRole": "synthetic-validation",
+      "masterModuleRefs": [
+        "speaking-transfer"
+      ],
+      "evidenceRefs": [
+        "fixture-04"
+      ],
+      "content": {
+        "eyebrow": "SPEAKING-TRANSFER",
+        "title": "Synthetic speaking-transfer",
+        "emphasis": "major",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "text": "A synthetic prompt-to-speech task exercises the Speaking module. No fluency or ability measurement is asserted."
+            }
+          ]
+        ],
+        "exampleGroups": [],
+        "takeaways": [
+          "Synthetic takeaway for this module."
+        ],
+        "callouts": [],
+        "panels": [],
+        "details": []
+      }
+    },
+    {
+      "id": "grammar-experience",
+      "type": "editorial-learning",
+      "editorialRole": "synthetic-validation",
+      "masterModuleRefs": [
+        "grammar-experience"
+      ],
+      "evidenceRefs": [
+        "fixture-05"
+      ],
+      "content": {
+        "eyebrow": "GRAMMAR-EXPERIENCE",
+        "title": "Synthetic grammar-experience",
+        "emphasis": "secondary",
+        "paragraphs": [],
+        "exampleGroups": [],
+        "takeaways": [
+          "Synthetic takeaway for this module."
+        ],
+        "callouts": [],
+        "panels": [
+          {
+            "title": "Synthetic present perfect",
+            "formula": "have / has + P.P.",
+            "text": "Generic grammar panel.",
+            "examples": [
+              "eat → ate → eaten",
+              "see → saw → seen",
+              "go → went → gone"
+            ]
+          },
+          {
+            "title": "Synthetic that tag",
+            "formula": "that",
+            "text": "Generic modifier panel.",
+            "examples": [
+              "banana + that is yellow",
+              "a TV that has a big screen"
+            ]
+          }
+        ],
+        "details": []
+      }
+    },
+    {
+      "id": "teacher-interpretation",
+      "type": "teacher-interpretation",
+      "editorialRole": "synthetic-validation",
+      "masterModuleRefs": [
+        "teacher-interpretation"
+      ],
+      "evidenceRefs": [],
+      "contentRef": "teacherInterpretation"
+    },
+    {
+      "id": "next-step",
+      "type": "editorial-next-step",
+      "editorialRole": "synthetic-validation",
+      "masterModuleRefs": [
+        "next-step"
+      ],
+      "evidenceRefs": [],
+      "contentRef": "nextStep"
+    },
+    {
+      "id": "class-record",
+      "type": "class-record",
+      "editorialRole": "synthetic-validation",
+      "masterModuleRefs": [
+        "class-record"
+      ],
+      "evidenceRefs": [],
+      "content": {
+        "section_eyebrow_1": "SYNTHETIC CLASS RECORD",
+        "section_title_1": "Test counts — not real attendance",
+        "metric_digits_1": "{{classRecord.scheduled}}",
+        "metric_title_1": "Test scheduled",
+        "metric_digits_2": "{{classRecord.actual}}",
+        "metric_title_2": "Test actual",
+        "metric_digits_3": "+{{classRecord.additional}}",
+        "metric_title_3": "Test additional",
+        "record_statement_1": "Synthetic counts: 4 scheduled / 5 actual / 1 additional. Not real attendance."
+      }
+    },
+    {
+      "id": "learning-archive",
+      "type": "learning-archive",
+      "editorialRole": "synthetic-validation",
+      "masterModuleRefs": [
+        "learning-archive"
+      ],
+      "evidenceRefs": [],
+      "content": {
+        "label_8": "TEST ARCHIVE",
+        "archive_eyebrow_1": "TEST ARCHIVE",
+        "archive_title_1": "Non-production placeholder",
+        "br_after_1": "No private archive",
+        "archive_body_1": "Synthetic fixture has no learning archive URL.",
+        "br_after_2": "TEST FIXTURE / NOT A REAL STUDENT REPORT",
+        "archive_meta_tag_1": "Student A · TEST",
+        "label_9": "TEST ARCHIVE",
+        "span_1": "TEST ARCHIVE",
+        "span_2": "→"
+      }
+    },
+    {
+      "id": "parent-feedback",
+      "type": "parent-feedback",
+      "editorialRole": "synthetic-validation",
+      "masterModuleRefs": [
+        "parent-feedback"
+      ],
+      "evidenceRefs": [],
+      "content": {}
+    },
+    {
+      "id": "brand-ending",
+      "type": "brand-ending",
+      "editorialRole": "synthetic-validation",
+      "masterModuleRefs": [
+        "brand-ending"
+      ],
+      "evidenceRefs": [],
+      "content": {
+        "label_4": "LE ENGLISH TEST FIXTURE",
+        "footer_brand_1": "LE ENGLISH",
+        "footer_slogan_1": "TEST FIXTURE / NOT A REAL STUDENT REPORT",
+        "footer_sub_1": "Synthetic validation only",
+        "footer_copyright_1": "TEST FIXTURE · 2099-01"
+      }
+    }
+  ]
+}

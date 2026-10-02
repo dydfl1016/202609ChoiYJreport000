@@ -1,0 +1,13 @@
+<section class="report-section" aria-labelledby="narrative-heading">
+  <div class="reveal-item">
+    <span class="section-eyebrow">{{content.eyebrow}}</span>
+    <h2 id="narrative-heading" class="section-title">{{content.title}}</h2>
+  </div>
+  <div class="teacher-card reveal-item">
+    <div class="section-desc">
+      {{#each content.paragraphs}}<p>{{rich:item}}</p>{{/each}}
+      {{#each content.exampleGroups}}<div class="teacher-quote"><h3>{{item.label}}</h3><ul>{{#each item.examples}}<li>{{item}}</li>{{/each}}</ul></div>{{/each}}
+      {{#each content.secondary}}<aside class="teacher-quote"><h3>{{item.title}}</h3>{{#each item.paragraphs}}<p>{{rich:item}}</p>{{/each}}</aside>{{/each}}
+    </div>
+  </div>
+</section>

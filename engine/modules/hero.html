@@ -1,0 +1,16 @@
+<header class="report-hero" aria-label="{{content.label_11}}">
+      <div class="hero-meta reveal-item">
+        <span class="hero-badge-brand">{{content.hero_badge_brand_1}}</span>
+        <span class="hero-badge-student">{{student.displayName}} 학생 · {{student.grade}}</span>
+        <span class="hero-badge-term">{{content.hero_badge_term_1}}</span>
+      </div>
+
+      <h1 class="hero-headline reveal-item">{{content.hero_headline_1}}<br>
+        <span class="accent-text">{{content.accent_text_1}}</span>{{content.accent_text_after_1}}</h1>
+
+      <div class="hero-narrative reveal-item">
+        {{#each content.paragraphs}}<p>{{rich:item}}</p>{{/each}}
+      </div>
+    </header>
+
+    

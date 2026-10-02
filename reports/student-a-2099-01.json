@@ -1,0 +1,435 @@
+{
+  "reportId": "student-a-2099-01",
+  "studentId": "student-a",
+  "month": "2099-01",
+  "contentSchemaVersion": 1,
+  "reportRevision": 1,
+  "inputStatus": "synthetic-test-fixture",
+  "fixtureNotice": "TEST FIXTURE / NOT A REAL STUDENT REPORT",
+  "narrativeAnchor": "SYNTHETIC MASTER ONLY: compare reading, word ordering and speaking layouts without a real learner history.",
+  "student": {
+    "displayName": "Student A",
+    "grade": "TEST LEVEL — NOT A REAL STUDENT"
+  },
+  "classRecord": {
+    "scheduled": 4,
+    "actual": 5,
+    "additional": 1
+  },
+  "archiveReference": {
+    "url": null
+  },
+  "heroStory": {
+    "label_11": "TEST FIXTURE / NOT A REAL STUDENT REPORT",
+    "hero_badge_brand_1": "LE ENGLISH TEST FIXTURE",
+    "hero_badge_term_1": "2099 · Synthetic Month",
+    "hero_headline_1": "Synthetic reading sequence",
+    "accent_text_1": "Build and speak",
+    "accent_text_after_1": "",
+    "paragraphs": [
+      [
+        {
+          "type": "text",
+          "text": "TEST FIXTURE / NOT A REAL STUDENT REPORT"
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "text": "This master fixture contains synthetic activity descriptions for structural testing."
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "text": "MASTER-ONLY DETAIL: longer source copy must not leak into the publishing view."
+        }
+      ]
+    ]
+  },
+  "teacherInterpretation": {
+    "section_eyebrow_1": "SYNTHETIC INTERPRETATION",
+    "section_title_1": "Interpretation layout test",
+    "paragraphs": [
+      [
+        {
+          "type": "text",
+          "text": "Synthetic observation and interpretation are separate records."
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "text": "No real child is being evaluated."
+        }
+      ],
+      [
+        {
+          "type": "text",
+          "text": "MASTER-ONLY INTERPRETATION: extra source detail is retained outside display copy."
+        }
+      ]
+    ],
+    "teacher_quote_1": "Synthetic takeaway: keep evidence separate from interpretation.",
+    "teacher_sign_1": "TEST FIXTURE / NOT A REAL STUDENT REPORT"
+  },
+  "nextStep": {
+    "next_step_tag_1": "SYNTHETIC NEXT STEP",
+    "next_step_title_1": "Transfer layout test",
+    "next_step_desc_1": "Synthetic transfer example: present a new picture, then ask Is it under the chair? This is test content, not an instructional recommendation for a real student.",
+    "next_focus_pill_1": "TEST Speaking Output"
+  },
+  "evidence": [
+    {
+      "evidenceId": "fixture-01",
+      "date": null,
+      "sourceType": "SYNTHETIC_TEST_FIXTURE",
+      "kind": "FACT",
+      "observation": "Synthetic evidence 1: test-only record; no real lesson date or performance.",
+      "relatedMaterial": null
+    },
+    {
+      "evidenceId": "fixture-02",
+      "date": null,
+      "sourceType": "SYNTHETIC_TEST_FIXTURE",
+      "kind": "OBSERVATION",
+      "observation": "Synthetic evidence 2: test-only record; no real lesson date or performance.",
+      "relatedMaterial": "Generic instructional example"
+    },
+    {
+      "evidenceId": "fixture-03",
+      "date": null,
+      "sourceType": "SYNTHETIC_TEST_FIXTURE",
+      "kind": "INTERPRETATION",
+      "observation": "Synthetic evidence 3: test-only record; no real lesson date or performance.",
+      "relatedMaterial": null
+    },
+    {
+      "evidenceId": "fixture-04",
+      "date": null,
+      "sourceType": "SYNTHETIC_TEST_FIXTURE",
+      "kind": "FACT",
+      "observation": "Synthetic evidence 4: test-only record; no real lesson date or performance.",
+      "relatedMaterial": "Generic instructional example"
+    },
+    {
+      "evidenceId": "fixture-05",
+      "date": null,
+      "sourceType": "SYNTHETIC_TEST_FIXTURE",
+      "kind": "OBSERVATION",
+      "observation": "Synthetic evidence 5: test-only record; no real lesson date or performance.",
+      "relatedMaterial": null
+    },
+    {
+      "evidenceId": "fixture-06",
+      "date": null,
+      "sourceType": "SYNTHETIC_TEST_FIXTURE",
+      "kind": "INTERPRETATION",
+      "observation": "Synthetic evidence 6: test-only record; no real lesson date or performance.",
+      "relatedMaterial": "Generic instructional example"
+    },
+    {
+      "evidenceId": "fixture-07",
+      "date": null,
+      "sourceType": "SYNTHETIC_TEST_FIXTURE",
+      "kind": "FACT",
+      "observation": "Synthetic evidence 7: test-only record; no real lesson date or performance.",
+      "relatedMaterial": null
+    },
+    {
+      "evidenceId": "fixture-08",
+      "date": null,
+      "sourceType": "SYNTHETIC_TEST_FIXTURE",
+      "kind": "OBSERVATION",
+      "observation": "Synthetic evidence 8: test-only record; no real lesson date or performance.",
+      "relatedMaterial": "Generic instructional example"
+    },
+    {
+      "evidenceId": "fixture-09",
+      "date": null,
+      "sourceType": "SYNTHETIC_TEST_FIXTURE",
+      "kind": "INTERPRETATION",
+      "observation": "Synthetic evidence 9: test-only record; no real lesson date or performance.",
+      "relatedMaterial": null
+    },
+    {
+      "evidenceId": "fixture-10",
+      "date": null,
+      "sourceType": "SYNTHETIC_TEST_FIXTURE",
+      "kind": "FACT",
+      "observation": "Synthetic evidence 10: test-only record; no real lesson date or performance.",
+      "relatedMaterial": "Generic instructional example"
+    },
+    {
+      "evidenceId": "fixture-11",
+      "date": null,
+      "sourceType": "SYNTHETIC_TEST_FIXTURE",
+      "kind": "OBSERVATION",
+      "observation": "Synthetic evidence 11: test-only record; no real lesson date or performance.",
+      "relatedMaterial": null
+    },
+    {
+      "evidenceId": "fixture-12",
+      "date": null,
+      "sourceType": "SYNTHETIC_TEST_FIXTURE",
+      "kind": "INTERPRETATION",
+      "observation": "Synthetic evidence 12: test-only record; no real lesson date or performance.",
+      "relatedMaterial": "Generic instructional example"
+    }
+  ],
+  "modules": [
+    {
+      "id": "hero",
+      "type": "hero",
+      "contentRef": "heroStory"
+    },
+    {
+      "id": "monthly-overview",
+      "type": "learning-narrative",
+      "content": {
+        "eyebrow": "MONTHLY-OVERVIEW",
+        "title": "Synthetic monthly-overview",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "text": "Synthetic activity set: read, rebuild and speak. This describes renderer coverage, not a learner outcome."
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": "MASTER-ONLY DETAIL: expanded source explanation for editorial omission coverage."
+            }
+          ]
+        ],
+        "exampleGroups": [],
+        "secondary": []
+      },
+      "evidenceRefs": [
+        "fixture-01"
+      ]
+    },
+    {
+      "id": "reading-translation",
+      "type": "learning-narrative",
+      "content": {
+        "eyebrow": "READING-TRANSLATION",
+        "title": "Synthetic reading-translation",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "text": "A synthetic reading task pairs short text with meaning. Generic topic chips exercise variable-length content."
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": "MASTER-ONLY DETAIL: expanded source explanation for editorial omission coverage."
+            }
+          ]
+        ],
+        "exampleGroups": [
+          {
+            "label": "Generic topics",
+            "examples": [
+              "Milk",
+              "3D Shapes",
+              "Animal Senses",
+              "Neighborhood",
+              "Air",
+              "Time",
+              "Fish",
+              "Van Gogh",
+              "Flags",
+              "Day & Night"
+            ]
+          }
+        ],
+        "secondary": [
+          {
+            "title": "Synthetic phonics support",
+            "paragraphs": [
+              [
+                {
+                  "type": "text",
+                  "text": "Synthetic phonics callout supports the reading layout; no separate large section."
+                }
+              ]
+            ]
+          }
+        ]
+      },
+      "evidenceRefs": [
+        "fixture-02"
+      ]
+    },
+    {
+      "id": "sentence-building",
+      "type": "learning-narrative",
+      "content": {
+        "eyebrow": "SENTENCE-BUILDING",
+        "title": "Synthetic sentence-building",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "text": "A synthetic ordering task arranges supplied words. The examples are instructional samples, not student utterances."
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": "MASTER-ONLY DETAIL: expanded source explanation for editorial omission coverage."
+            }
+          ]
+        ],
+        "exampleGroups": [
+          {
+            "label": "Generic examples, not student speech",
+            "examples": [
+              "It's sunny.",
+              "My favorite sport is tennis.",
+              "I ride my bike.",
+              "I do my homework.",
+              "I practice the piano.",
+              "It's on the chair.",
+              "It's under the desk.",
+              "It's in the toy box."
+            ]
+          }
+        ],
+        "secondary": []
+      },
+      "evidenceRefs": [
+        "fixture-03"
+      ]
+    },
+    {
+      "id": "speaking-transfer",
+      "type": "learning-narrative",
+      "content": {
+        "eyebrow": "SPEAKING-TRANSFER",
+        "title": "Synthetic speaking-transfer",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "text": "A synthetic prompt-to-speech task exercises the Speaking module. No fluency or ability measurement is asserted."
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": "MASTER-ONLY DETAIL: expanded source explanation for editorial omission coverage."
+            }
+          ]
+        ],
+        "exampleGroups": [],
+        "secondary": []
+      },
+      "evidenceRefs": [
+        "fixture-04"
+      ]
+    },
+    {
+      "id": "grammar-experience",
+      "type": "learning-narrative",
+      "content": {
+        "eyebrow": "GRAMMAR-EXPERIENCE",
+        "title": "Synthetic grammar-experience",
+        "paragraphs": [
+          [
+            {
+              "type": "text",
+              "text": "Synthetic grammar samples exercise formula and example layouts. They do not document a real lesson."
+            }
+          ],
+          [
+            {
+              "type": "text",
+              "text": "MASTER-ONLY DETAIL: expanded source explanation for editorial omission coverage."
+            }
+          ]
+        ],
+        "exampleGroups": [
+          {
+            "label": "Generic grammar examples",
+            "examples": [
+              "have/has + P.P.",
+              "eat – ate – eaten",
+              "see – saw – seen",
+              "go – went – gone",
+              "take – took – taken",
+              "write – wrote – written",
+              "banana + that is yellow",
+              "a TV that has a big screen"
+            ]
+          }
+        ],
+        "secondary": []
+      },
+      "evidenceRefs": [
+        "fixture-05"
+      ]
+    },
+    {
+      "id": "teacher-interpretation",
+      "type": "teacher-interpretation",
+      "contentRef": "teacherInterpretation"
+    },
+    {
+      "id": "next-step",
+      "type": "next-step",
+      "contentRef": "nextStep"
+    },
+    {
+      "id": "class-record",
+      "type": "class-record",
+      "content": {
+        "section_eyebrow_1": "SYNTHETIC CLASS RECORD",
+        "section_title_1": "Test counts — not real attendance",
+        "metric_digits_1": "{{classRecord.scheduled}}",
+        "metric_title_1": "Test scheduled",
+        "metric_digits_2": "{{classRecord.actual}}",
+        "metric_title_2": "Test actual",
+        "metric_digits_3": "+{{classRecord.additional}}",
+        "metric_title_3": "Test additional",
+        "record_statement_1": "Synthetic counts: 4 scheduled / 5 actual / 1 additional. Not real attendance."
+      }
+    },
+    {
+      "id": "learning-archive",
+      "type": "learning-archive",
+      "content": {
+        "label_8": "TEST ARCHIVE",
+        "archive_eyebrow_1": "TEST ARCHIVE",
+        "archive_title_1": "Non-production placeholder",
+        "br_after_1": "No private archive",
+        "archive_body_1": "Synthetic fixture has no learning archive URL.",
+        "br_after_2": "TEST FIXTURE / NOT A REAL STUDENT REPORT",
+        "archive_meta_tag_1": "Student A · TEST",
+        "label_9": "TEST ARCHIVE",
+        "span_1": "TEST ARCHIVE",
+        "span_2": "→"
+      }
+    },
+    {
+      "id": "parent-feedback",
+      "type": "parent-feedback",
+      "content": {}
+    },
+    {
+      "id": "brand-ending",
+      "type": "brand-ending",
+      "content": {
+        "label_4": "LE ENGLISH TEST FIXTURE",
+        "footer_brand_1": "LE ENGLISH",
+        "footer_slogan_1": "TEST FIXTURE / NOT A REAL STUDENT REPORT",
+        "footer_sub_1": "Synthetic validation only",
+        "footer_copyright_1": "TEST FIXTURE · 2099-01"
+      }
+    }
+  ]
+}

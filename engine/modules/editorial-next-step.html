@@ -1,0 +1,11 @@
+<section class="report-section editorial-next-step" aria-labelledby="next-heading">
+  <div class="next-step-card">
+    <span class="next-step-tag">{{content.eyebrow}}</span>
+    <h2 id="next-heading" class="next-step-title">{{content.title}}</h2>
+    <div class="next-step-desc">{{#each content.paragraphs}}<p>{{rich:item}}</p>{{/each}}</div>
+    <ol class="editorial-transfer-board" aria-label="다음 달 전이 예시">{{#each content.transferFlow}}<li><span>{{item.label}}</span><strong>{{item.example}}</strong></li>{{/each}}</ol>
+    <p class="next-step-desc">{{content.supportingCopy}}</p>
+    <div class="editorial-october-goal"><span>October Goal</span><strong>{{content.goal}}</strong></div>
+    <p class="editorial-closing">{{content.closing}}</p>
+  </div>
+</section>

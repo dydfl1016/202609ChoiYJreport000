@@ -1,0 +1,42 @@
+import assert from 'node:assert/strict';
+import {createHash} from 'node:crypto';
+import {readFile} from 'node:fs/promises';
+import {renderReport,validateReport,archiveUrl} from '../engine/renderer.mjs';
+import {createFeedbackPayload,submitFeedback} from '../engine/feedback.mjs';
+const json=async path=>JSON.parse(await readFile(path,'utf8'));
+const sample=await json('reports/student-a-2099-01.json');
+const golden=await json('reports/choi-yejun-2026-09.json');
+const html=await renderReport(sample);
+assert.equal(createHash('sha256').update(html).digest('hex'),'9327358b18b84e4afd6a55f69dc3cbe0fecebce145f66527f945e102f1fded99','Synthetic Master rendering regression baseline');
+assert.equal(await renderReport(golden),await readFile('index.html','utf8'),'Golden byte parity');
+assert.equal(sample.student.displayName,'Student A');assert.equal(sample.student.grade,'TEST LEVEL — NOT A REAL STUDENT');
+assert.equal(sample.studentId,'student-a');assert.equal(sample.month,'2099-01');
+assert(html.includes('NOT A REAL STUDENT REPORT'));assert(!html.includes(golden.student.displayName));
+assert.equal(archiveUrl(sample),null);assert(html.includes('학습 기록물을 준비하고 있습니다.'));
+assert(!html.includes('drive.google.com'));
+const expected=['hero','monthly-overview','reading-translation','sentence-building','speaking-transfer','grammar-experience','teacher-interpretation','next-step','class-record','learning-archive','parent-feedback','brand-ending'];
+assert.deepEqual(sample.modules.map(m=>m.id),expected);
+assert.notDeepEqual(sample.modules.map(m=>m.type),golden.modules.map(m=>m.type));
+assert.equal(sample.modules.filter(m=>m.type==='learning-narrative').length,5);
+assert.equal(sample.modules.some(m=>m.type==='learning-continuum'),false);
+assert.equal(sample.evidence.length,12);assert(sample.evidence.every(e=>e.sourceType==='SYNTHETIC_TEST_FIXTURE'&&e.date===null));
+assert.deepEqual(new Set(sample.evidence.map(e=>e.kind)),new Set(['FACT','OBSERVATION','INTERPRETATION']));
+assert.deepEqual(sample.classRecord,{scheduled:4,actual:5,additional:1});
+const decoded=html.replaceAll('&#39;',"'").replaceAll('&amp;','&');
+for(const text of ["It's sunny.",'My favorite sport is tennis.','I ride my bike.','I do my homework.','I practice the piano.',"It's on the chair.","It's under the desk.","It's in the toy box.",'have/has + P.P.','eat – ate – eaten','see – saw – seen','go – went – gone','take – took – taken','write – wrote – written','banana + that is yellow','a TV that has a big screen','Is it under the chair?'])assert(decoded.includes(text),text);
+assert(!/Reading 90|Speaking 85|Grammar 95|Lexile|radar|ranking/.test(decoded));
+const fragment=x=>x.match(/<form data-feedback>[\s\S]*?<\/form>/)[0].replace(/(<input type="hidden" name="(?:reportId|studentId|month)" value=")[^"]*/g,'$1IDENTITY');
+assert.equal(fragment(html),fragment(await renderReport(golden)),'Shared Feedback exact markup');
+const payload=createFeedbackPayload(sample,{readabilityScore:5,growthClarityScore:4,explanationClarityScore:3,comment:'test'},new Date('2099-02-01T00:00:00Z'));
+assert.deepEqual(payload,{reportId:'student-a-2099-01',studentId:'student-a',month:'2099-01',readabilityScore:5,growthClarityScore:4,explanationClarityScore:3,comment:'test',createdAt:'2099-02-01T00:00:00.000Z'});
+assert.equal((await submitFeedback(payload)).status,'unavailable');
+const reordered=structuredClone(sample);[reordered.modules[2],reordered.modules[4]]=[reordered.modules[4],reordered.modules[2]];
+const composed=await renderReport(reordered);assert(composed.indexOf('id="speaking-transfer-narrative-heading"')<composed.indexOf('id="reading-translation-narrative-heading"'));
+const omitted=structuredClone(sample);omitted.modules=omitted.modules.filter(m=>m.id!=='grammar-experience');assert(!(await renderReport(omitted)).includes('id="grammar-experience-narrative-heading"'));
+const bad=structuredClone(sample);bad.modules[2].evidenceRefs=['missing'];assert.throws(()=>validateReport(bad),/Unknown evidence/);
+const injected=structuredClone(sample);injected.modules[1].content.title='<script>alert(1)</script>';assert((await renderReport(injected)).includes('&lt;script&gt;alert(1)&lt;/script&gt;'));
+// Private links are absent from every reusable synthetic artifact, including source and display.
+for(const path of ['reports/student-a-2099-01.json','reports/display/student-a-2099-01.json','sources/student-a-2099-01.reviewed.md','sources/student-a-2099-01.publishing.txt','student-a-2099-01.html']){
+ const text=await readFile(path,'utf8');assert(!text.includes('drive.google.com'),path);assert(text.includes('NOT A REAL STUDENT REPORT'),path);
+}
+console.log('PASS: synthetic identity/privacy, Master rendering, distinct composition, ordering/omission, evidence kinds/refs, escaping, Archive placeholder, shared Feedback/payload and Golden byte parity');
